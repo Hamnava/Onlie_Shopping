@@ -15,3 +15,4 @@ D:\Projects\HamnavaKala\HamnavaKala\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKal
 D:\Projects\HamnavaKala\HamnavaKala\HamnavaKala.Core\obj\Debug\net5.0\ref\HamnavaKala.Core.dll
 D:\Projects\HamnavaKala\HamnavaKala\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.pdb
 D:\Projects\HamnavaKala\HamnavaKala\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.genruntimeconfig.cache
+D:\Projects\HamnavaKala\HamnavaKala\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.CopyComplete
