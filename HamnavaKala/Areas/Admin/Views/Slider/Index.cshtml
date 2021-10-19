@@ -3,6 +3,8 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     int counter = 1;
+    int page = ViewBag.page;
+    int sliderCount = ViewBag.SliderCount;
 }
 
 
@@ -39,23 +41,23 @@
                                     </div>
                                 }
 
-                               
+
                             }
-                             @if (TempData["NotFound"] != null)
-                                {
-                                    <script>
-                                        setTimeout(function (){
-                                            Swal.fire({
-                                                position: 'top-end',
-                                                icon: 'error',
-                                                title: 'سلایدر با این مشخصات پیدا نشد!',
-                                                showConfirmButton: false,
-                                                timer: 3000
-                                            })
-                                        },100)
-                                      
-                                    </script>
-                                }
+                            @if (TempData["NotFound"] != null)
+                            {
+                                <script>
+                                    setTimeout(function () {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'error',
+                                            title: 'سلایدر با این مشخصات پیدا نشد!',
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        })
+                                    }, 100)
+
+                                </script>
+                            }
                             <table class="table table-striped dataTable no-footer" id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
                                 <thead>
                                     <tr role="row">
@@ -72,7 +74,7 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr class="gradeX odd" role="row">
-                                            <td class="sorting_1">@counter</td>
+                                            <td class="sorting_1">@item.SliderId</td>
                                             <td class="sorting_1"><img width="140" height="100" src="~/Site/assets/images/slider-main/@item.ImgSlider" /></td>
                                             <td class="sorting_1">@item.SliderTitle</td>
                                             <td>
@@ -93,7 +95,25 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="datatable-editable_info" role="status" aria-live="polite">Showing 1 to 10 of 80 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="datatable-editable_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="datatable-editable" tabindex="0" id="datatable-editable_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="datatable-editable" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="datatable-editable" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="datatable-editable" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="datatable-editable" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="datatable-editable" tabindex="0"><a href="#">5</a></li><li class="paginate_button disabled" aria-controls="datatable-editable" tabindex="0" id="datatable-editable_ellipsis"><a href="#">…</a></li><li class="paginate_button " aria-controls="datatable-editable" tabindex="0"><a href="#">8</a></li><li class="paginate_button next" aria-controls="datatable-editable" tabindex="0" id="datatable-editable_next"><a href="#">Next</a></li></ul></div></div></div>
+                    </div><div class="row">
+                        <div class="col-sm-6">
+                            <div class="dataTables_info" id="datatable-editable_info" role="status" aria-live="polite">Showing 1 to 10 of 80 entries</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="dataTables_paginate paging_simple_numbers" id="datatable-editable_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button previous " aria-controls="datatable-editable" tabindex="0" id="datatable-editable_previous"><a href="/Admin/Slider/Index?page=1">صفحه اول</a></li>
+                                    @for (int i = 1; i <= sliderCount; i++)
+                                    {
+                                    <li class="paginate_button @(i==page?"active":"")" aria-controls="datatable-editable" tabindex="0">
+                                    <a href="/Admin/Slider/Index?page=@i">@i</a>
+                                    </li>
+                                    }
+                                    <li class="paginate_button next" aria-controls="datatable-editable" tabindex="0" id="datatable-editable_next"><a href="/Admin/Slider/Index?page=@sliderCount">صفحه آخر</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,6 +122,6 @@
     </div> <!-- end panel -->
 </div> <!-- end col-->
 
-@section Scripts{ 
+@section Scripts{
     <script src="~/Site/assets/js/SweetAlert.js"></script>
 }

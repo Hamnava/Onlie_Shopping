@@ -18,9 +18,11 @@ namespace HamnavaKala.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page =1)
         {
-            return View(_context.ShowSlider());
+            ViewBag.page = page;
+            ViewBag.SliderCount = _context.SliderCount();
+            return View(_context.ShowSlider(page));
         }
 
         [HttpGet]
