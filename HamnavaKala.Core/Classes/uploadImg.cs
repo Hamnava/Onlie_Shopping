@@ -26,10 +26,29 @@ namespace HamnavaKala.Core.Classes
             }
             catch (Exception)
             {
-
                 return "false";
             }
             
         }
+
+        public static bool DeleteImg(string path, string imgname)
+        {
+            try
+            {
+                string Fullpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Site/assets/images/" + path + "/" + imgname);
+                if (File.Exists(Fullpath))
+                {
+                    File.Delete(Fullpath);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+           
+        }
+             
     }
 }
