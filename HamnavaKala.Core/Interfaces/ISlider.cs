@@ -9,10 +9,11 @@ namespace HamnavaKala.Core.Interfaces
 {
    public interface ISlider
     {
-        List<Slider> ShowSlider();
+        List<Slider> ShowSlider(int page);
         Slider GetSliderById(int sliderId);
         int AddSlider(Slider slider);
         bool UpdateSlider(Slider slider);
         bool DeleteSlider(int id);
+        public int SliderCount();
     }
 }

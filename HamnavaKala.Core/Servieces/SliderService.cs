@@ -51,9 +51,10 @@ namespace HamnavaKala.Core.Servieces
           return  _context.Sliders.Find(sliderId);
         }
 
-        public List<Slider> ShowSlider()
+        public List<Slider> ShowSlider(int page)
         {
-           return _context.Sliders.OrderBy(s=> s.SliderSort).ToList();
+            int skip = (page - 1) * 2;
+           return _context.Sliders.OrderBy(s=> s.SliderSort).Skip(skip).Take(2).ToList();
         }
 
         public bool UpdateSlider(Slider slider)
@@ -68,6 +69,16 @@ namespace HamnavaKala.Core.Servieces
             {
                 return false;
             }
+        }
+
+        public int SliderCount()
+        {
+            int SliderCount = _context.Sliders.Count();
+            if (SliderCount % 2 != 0)
+                SliderCount++;
+
+            SliderCount = SliderCount / 2;
+            return SliderCount;
         }
     }
 }

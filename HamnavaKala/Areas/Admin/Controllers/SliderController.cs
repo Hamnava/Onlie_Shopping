@@ -18,9 +18,11 @@ namespace HamnavaKala.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page =1)
         {
-            return View(_context.ShowSlider());
+            ViewBag.page = page;
+            ViewBag.SliderCount = _context.SliderCount();
+            return View(_context.ShowSlider(page));
         }
 
         [HttpGet]
@@ -44,7 +46,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
             string imgname = uploadImg.CreateImg(file);
             if (imgname == "flase")
             {
-                TempData["Result"] =  "failed";
+                TempData["Result"] = "failed";
                 return RedirectToAction(nameof(Index));
             }
 
@@ -70,18 +72,34 @@ namespace HamnavaKala.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateSlider(Slider slider)
+        public IActionResult UpdateSlider(Slider slider,IFormFile file)
         {
             if (!ModelState.IsValid)
             {
                 return View(slider);
             }
-            else
+            if (file != null)
             {
+                string imgname = uploadImg.CreateImg(file);
+                if (imgname == "false")
+                {
+                    TempData["Result"] = "failed";
+                    return RedirectToAction(nameof(Index));
+                }
+                bool DeleteImage = uploadImg.DeleteImg("slider-main", slider.ImgSlider);
+                if (!DeleteImage)
+                {
+                    TempData["Result"] = "failed";
+                    return RedirectToAction(nameof(Index));
+                }
+                slider.ImgSlider = imgname;
+            }
+
+
                 bool res = _context.UpdateSlider(slider);
                 TempData["Result"] = res  ? "success" : "failed";
                 return RedirectToAction(nameof(Index));
-            }
+            
         }
 
         [HttpGet]
@@ -99,6 +117,13 @@ namespace HamnavaKala.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult DeleteSlider(int id, Slider slider)
         {
+
+            bool DeleteImage = uploadImg.DeleteImg("slider-main", slider.ImgSlider);
+            if (!DeleteImage)
+            {
+                TempData["Result"] = "failed";
+                return RedirectToAction(nameof(Index));
+            }
             bool res = _context.DeleteSlider(id);
             TempData["Result"] = res ? "success" : "failed";
             return RedirectToAction(nameof(Index));
