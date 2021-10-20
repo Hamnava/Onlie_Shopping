@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "نمایش دسته بندی ها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int counter = 1;
+}
+
+<div class="col-sm-12">
+    <div class="panel">
+        <div class="panel-body" style="margin-top:100px">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="m-b-30">
+                        <a asp-controller="Category" asp-action="AddCategory"  class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editable-responsive">
+                <div id="datatable-editable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @if (TempData["Result"] != null)
+                            {
+                                @if (TempData["Result"].ToString() == "true")
+                                {
+                                    <div class="alert alert-info alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        عملیات به شکل	<strong>موفقیت آمیز</strong> انجام شد
+                                    </div>
+                                }
+
+                                else
+                                {
+                                    <div class="alert alert-danger alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        عملیات به شکل	<strong>موفقیت آمیز</strong> انجام نشد
+                                    </div>
+                                }
+
+
+                            }
+                            @if (TempData["NotFound"] != null)
+                            {
+                                <script>
+                                    setTimeout(function () {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'error',
+                                            title: 'سلایدر با این مشخصات پیدا نشد!',
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        })
+                                    }, 100)
+
+                                </script>
+                            }
+                            <table class="table table-striped dataTable no-footer" id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">شماره</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">نام فارسی دسته بندی</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending"> نام انگلیسی دسته بندی</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">زیر دسته </th>
+                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="فعالیت" style="width: 110px;">فعالیت</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Count() > 0)
+                                    {
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr class="gradeX odd" role="row">
+                                                <td class="sorting_1">@counter</td>
+                                                <td class="sorting_1">@item.CategoryFaName</td>
+                                                <td class="sorting_1">@item.CategoryEnName</td>
+                                                <td class="sorting_1"><a asp-action="ShowAllSubCategory" asp-controller="Category" asp-route-id="@item.CategoryId" class="btn btn-success" >زیر دسته ها </a></td>
+                                                <td class="actions">
+
+                                                    <a asp-action="UpdateCategory" asp-route-id="@item.CategoryId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                </td>
+                                            </tr>
+                                            counter++;
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr class="gradeX odd" role="row">
+                                            <td class="sorting_1">دسته بندی موجود نمی باشد</td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end: panel body -->
+
+    </div> <!-- end panel -->
+</div> <!-- end col-->

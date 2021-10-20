@@ -321,3 +321,9 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.genrunti
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowProductColor.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddProductColor.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdateColor.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\ShowAllCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\AddCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\ShowAllSubCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\ShowAllSubsubCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\UpdateCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\DeleteCategory.cshtml.g.cs

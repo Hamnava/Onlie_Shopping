@@ -26,7 +26,7 @@ namespace HamnavaKala.DataLayer.Entities
         public string CategoryEnName { get; set; }
 
         public bool IsDelete { get; set; }
-        public int SubCategory { get; set; }
+        public int? SubCategory { get; set; }
 
         // Relations to other tables
         public List<Product> Products { get; set; }
