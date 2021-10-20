@@ -5844,11 +5844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
+      "projectUniqueName": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
       "projectName": "HamnavaKala.Core",
-      "projectPath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
+      "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
       "packagesPath": "C:\\Users\\Hamnava\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.Core\\obj\\",
+      "outputPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5868,8 +5868,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj": {
-              "projectPath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj"
+            "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj": {
+              "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj"
             }
           }
         }

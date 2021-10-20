@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KhOxEPtwZn2OfcAeKPNkmckRNz4DJYZezV5vZNHu+wSl8WicmtzvkJGwdXxr2a9lQi+Xs8t2zsRhYy+IkFPn4A==",
+  "dgSpecHash": "uB8MYhNEdN0LkFhF+E74GciIoPAja4i64QTIYYwAi76wYHeAcRAbF0Jgzl4IPu5K5/8LsjD6J/FCKc6N8NpRJw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+  "projectFilePath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hamnava\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hamnava\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vXC5y1DatzlmYGoUr2TgbimfoSseb1ctiAce8Gxl5/jO0kzF3p7rCDGnIt2aSabAhNb2dwncxGU/G8qSfACSuA==",
+  "dgSpecHash": "mumIw2/WnhAIMm76cz6RoQ+htAQ8HLK7sFvqS6cO8TmqEjhuU2BBJA7lLGJrOAGGpSLH/2YeD4FDomeoG4nQtQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
+  "projectFilePath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hamnava\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hamnava\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.11\\microsoft.aspnetcore.http.features.5.0.11.nupkg.sha512",

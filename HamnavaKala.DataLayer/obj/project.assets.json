@@ -5756,11 +5756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+      "projectUniqueName": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
       "projectName": "HamnavaKala.DataLayer",
-      "projectPath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+      "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
       "packagesPath": "C:\\Users\\Hamnava\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\HamnavaKala\\HamnavaKala\\HamnavaKala.DataLayer\\obj\\",
+      "outputPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
