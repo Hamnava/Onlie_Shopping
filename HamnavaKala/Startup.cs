@@ -39,6 +39,7 @@ namespace HamnavaKala
             services.AddTransient<ISlider, SliderService>();
             services.AddTransient<IProductServices, ProductServices>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IGurantee, GuranteeService>();
             #endregion
         }
 

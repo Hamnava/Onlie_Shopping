@@ -1,6 +1,6 @@
-﻿@model IEnumerable<Category>
+﻿@model IEnumerable<ProductGurantee>
 @{
-    ViewData["Title"] = "نمایش دسته بندی ها";
+    ViewData["Title"] = "نمایش گارانتی ها";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
     int counter = 1;
 }
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="m-b-30">
-                        <a asp-controller="Category" asp-action="AddCategory"  class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
+                        <a asp-controller="Gurantee" asp-action="AddGurantee" class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                         Swal.fire({
                                             position: 'top-end',
                                             icon: 'error',
-                                            title: 'دسته بندی با این مشخصات پیدا نشد!',
+                                            title: 'گارانتی با این مشخصات پیدا نشد!',
                                             showConfirmButton: false,
                                             timer: 3000
                                         })
@@ -59,9 +59,7 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">شماره</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">نام فارسی دسته بندی</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending"> نام انگلیسی دسته بندی</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">زیر دسته </th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="موتور جستجو: activate to sort column descending">نام گارانتی</th>
                                         <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="فعالیت" style="width: 110px;">فعالیت</th>
                                     </tr>
                                 </thead>
@@ -72,13 +70,11 @@
                                         {
                                             <tr class="gradeX odd" role="row">
                                                 <td class="sorting_1">@counter</td>
-                                                <td class="sorting_1">@item.CategoryFaName</td>
-                                                <td class="sorting_1">@item.CategoryEnName</td>
-                                                <td class="sorting_1"><a asp-action="ShowAllSubCategory" asp-controller="Category" asp-route-id="@item.CategoryId" class="btn btn-success" >زیر دسته ها </a></td>
+                                                <td class="sorting_1">@item.GuranteeName</td>
                                                 <td class="actions">
 
-                                                    <a asp-action="UpdateCategory" asp-route-id="@item.CategoryId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                    <a asp-action="UpdateGurantee" asp-route-id="@item.GuranteeId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                                    <a asp-action="DeleteGurantee" asp-route-id="@item.GuranteeId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                             counter++;
@@ -88,7 +84,7 @@
                                     else
                                     {
                                         <tr class="gradeX odd" role="row">
-                                            <td class="sorting_1">دسته بندی موجود نمی باشد</td>
+                                            <td class="sorting_1"> گارانتی موجود نمی باشد</td>
                                         </tr>
                                     }
 

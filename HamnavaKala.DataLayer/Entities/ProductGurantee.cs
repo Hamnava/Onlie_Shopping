@@ -16,7 +16,7 @@ namespace HamnavaKala.DataLayer.Entities
         [MinLength(3, ErrorMessage = "{0} نمیتواند کمتر از {1} باشد.")]
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string GuranteeName { get; set; }
-
+        public bool IsDelete { get; set; }
         #region Relations to other table
         public List<ProductPrice> productPrices { get; set; }
 

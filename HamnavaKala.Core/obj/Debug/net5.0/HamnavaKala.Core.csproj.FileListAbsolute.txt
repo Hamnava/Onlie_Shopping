@@ -33,3 +33,4 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Cor
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\ref\HamnavaKala.Core.dll
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.pdb
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.genruntimeconfig.cache
+D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.CopyComplete
