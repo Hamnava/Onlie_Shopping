@@ -20,7 +20,7 @@ namespace HamnavaKala.DataLayer.Entities
 
         [Display(Name = "کد رنگ")]
         [MaxLength(20, ErrorMessage = "{0} نمیتواند بیشتر از {1} باشد.")]
-        [MinLength(6, ErrorMessage = "{0} نمیتواند کمتر از {1} باشد.")]
+        [MinLength(4, ErrorMessage = "{0} نمیتواند کمتر از {1} باشد.")]
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string colorCode { get; set; }
 

@@ -37,6 +37,7 @@ namespace HamnavaKala
 
             #region IOC
             services.AddTransient<ISlider, SliderService>();
+            services.AddTransient<IProductServices, ProductServices>();
             #endregion
         }
 

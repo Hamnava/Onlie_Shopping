@@ -318,3 +318,6 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.dll
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\ref\HamnavaKala.dll
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.pdb
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.genruntimeconfig.cache
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowProductColor.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddProductColor.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdateColor.cshtml.g.cs
