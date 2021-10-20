@@ -16,5 +16,38 @@ namespace HamnavaKala.DataLayer.Context
         }
 
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        #region FaQ
+        public DbSet<AnswerQ> Answers { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        #endregion
+
+        #region Products
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductColor> ProductColors { get; set; }
+        public DbSet<ProductGallery> ProductGalleries{ get; set; }
+        public DbSet<ProductGurantee> ProductGurantees { get; set; }
+        public DbSet<ProductProperty> ProductProperties { get; set; }
+        public DbSet<PropertyValue> PropertyValues { get; set; }
+        public DbSet<ProductProperty_Category> ProductProperty_Categories { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<ProductPrice> ProductPrices { get; set; }
+        #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var casecadeFKs = modelBuilder.Model.GetEntityTypes()
+                .SelectMany(t => t.GetForeignKeys())
+                .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+
+            foreach (var fk in casecadeFKs)
+                fk.DeleteBehavior = DeleteBehavior.Restrict;
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -4,14 +4,16 @@ using HamnavaKala.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HamnavaKala.DataLayer.Migrations
 {
     [DbContext(typeof(HamnavaKalaContext))]
-    partial class HamnavaKalaContextModelSnapshot : ModelSnapshot
+    [Migration("20211020114552_mig-CreateAll_Tables_relatedTo_Product")]
+    partial class migCreateAll_Tables_relatedTo_Product
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -258,51 +260,6 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.HasKey("GuranteeId");
 
                     b.ToTable("ProductGurantees");
-                });
-
-            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductPrice", b =>
-                {
-                    b.Property<int>("ProductpriceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CteateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EndDateDiscount")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("count")
-                        .HasColumnType("int");
-
-                    b.Property<int>("mainPrice")
-                        .HasColumnType("int");
-
-                    b.Property<int>("maxorderCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("productColor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("productGurantee")
-                        .HasColumnType("int");
-
-                    b.Property<int>("specialprice")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductpriceId");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("productColor");
-
-                    b.HasIndex("productGurantee");
-
-                    b.ToTable("ProductPrices");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductProperty", b =>
@@ -566,33 +523,6 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductPrice", b =>
-                {
-                    b.HasOne("HamnavaKala.DataLayer.Entities.Product", "product")
-                        .WithMany("productPrices")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("HamnavaKala.DataLayer.Entities.ProductColor", "ProductColor")
-                        .WithMany("productPrices")
-                        .HasForeignKey("productColor")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("HamnavaKala.DataLayer.Entities.ProductGurantee", "ProductGurantee")
-                        .WithMany("productPrices")
-                        .HasForeignKey("productGurantee")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("product");
-
-                    b.Navigation("ProductColor");
-
-                    b.Navigation("ProductGurantee");
-                });
-
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductProperty_Category", b =>
                 {
                     b.HasOne("HamnavaKala.DataLayer.Entities.Category", "Category")
@@ -671,23 +601,11 @@ namespace HamnavaKala.DataLayer.Migrations
 
                     b.Navigation("productGallery");
 
-                    b.Navigation("productPrices");
-
                     b.Navigation("propertyValues");
 
                     b.Navigation("Questions");
 
                     b.Navigation("reviews");
-                });
-
-            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductColor", b =>
-                {
-                    b.Navigation("productPrices");
-                });
-
-            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductGurantee", b =>
-                {
-                    b.Navigation("productPrices");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductProperty", b =>

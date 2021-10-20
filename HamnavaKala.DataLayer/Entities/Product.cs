@@ -60,7 +60,11 @@ namespace HamnavaKala.DataLayer.Entities
         [ForeignKey("BrandId")]
         public Brand Brand { get; set; }
         public List<PropertyValue> propertyValues { get; set; }
+        public List<ProductGallery> productGallery { get; set; }
+        public List<Comment> Comment { get; set; }
+        public List<Question> Questions { get; set; }
         public List<Review> reviews { get; set; }
+        public List<ProductPrice> productPrices { get; set; }
         #endregion
 
     }
