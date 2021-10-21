@@ -47,7 +47,7 @@ namespace HamnavaKala.Core.Servieces
 
         public bool ExistGurantee(string guranteeName, int granteId)
         {
-            return _context.ProductGurantees.Any(g => g.GuranteeName == guranteeName && g.GuranteeId != granteId);
+            return _context.ProductGurantees.Any(g => g.GuranteeName == guranteeName && g.GuranteeId != granteId && g.IsDelete == false);
         }
 
         public ProductGurantee GetGuranteebyId(int id)

@@ -24,7 +24,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult AddGurantee()
         {
-            return PartialView("");
+            return PartialView("_AddGurantee");
         }
 
         [HttpPost]
@@ -36,7 +36,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
             }
             if (_gurantee.ExistGurantee(gurantee.GuranteeName, 0))
             {
-                return RedirectToAction(nameof(ShowGurantee));
+                return Json(5);
             }
             int grid = _gurantee.AddGurantee(gurantee);
             int sendJson = grid > 0 ? 1 : 4;
@@ -44,9 +44,10 @@ namespace HamnavaKala.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult UpdateGurantee()
+        public IActionResult UpdateGurantee(int id)
         {
-            return PartialView("");
+            ProductGurantee gurantee = _gurantee.GetGuranteebyId(id);
+            return PartialView("_UpdateGurantee", gurantee);
         }
 
         [HttpPost]
@@ -58,7 +59,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
             }
             if (_gurantee.ExistGurantee(gurantee.GuranteeName, 0))
             {
-                return RedirectToAction(nameof(ShowGurantee));
+                return Json(5);
             }
             bool grid = _gurantee.UpdateGurantee(gurantee);
             int sendJson = grid ? 2 : 4;
@@ -66,22 +67,16 @@ namespace HamnavaKala.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteGurantee()
+        public IActionResult DeleteGurantee(int id)
         {
-            return PartialView("");
+            ProductGurantee gurantee = _gurantee.GetGuranteebyId(id);
+             return PartialView("_DeleteGurantee", gurantee);
         }
 
         [HttpPost]
         public IActionResult DeleteGurantee(ProductGurantee gurantee)
         {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(ShowGurantee));
-            }
-            if (_gurantee.ExistGurantee(gurantee.GuranteeName, 0))
-            {
-                return RedirectToAction(nameof(ShowGurantee));
-            }
+           
             bool grid = _gurantee.DeleteGurantee(gurantee);
             int sendJson = grid ? 3 : 4;
             return Json(sendJson);

@@ -1,0 +1,29 @@
+﻿
+@model ProductGurantee
+
+<div class="row">
+    <h2 class="text-center text-info" style="margin-top:-15px;">حذف گارانتی</h2>
+    <div class="col-md-12">
+        <form asp-action="DeleteGurantee" method="post"
+              data-ajax="true"
+              data-Success="Refresh"
+              enctype="multipart/form-data">
+
+            <input hidden asp-for="GuranteeId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+
+                <label asp-for="GuranteeName" class="control-label"></label>
+                <input readonly asp-for="GuranteeName" class="form-control" />
+                <span asp-validation-for="GuranteeName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+                <button type="submit" value="Create" class="btn btn-danger">حذف</button>
+            </div>
+
+        </form>
+    </div>
+</div>
