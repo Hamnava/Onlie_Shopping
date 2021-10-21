@@ -77,5 +77,10 @@ namespace HamnavaKala.Core.Servieces
         {
             return _context.Categories.Any(c => c.CategoryEnName == catEnName && c.CategoryFaName == catfaName && c.CategoryId != catid);
         }
+
+        public List<Category> Showsubcategory()
+        {
+            return _context.Categories.Where(c => c.SubCategory != null).ToList();
+        }
     }
 }

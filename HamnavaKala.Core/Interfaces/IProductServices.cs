@@ -16,5 +16,12 @@ namespace HamnavaKala.Core.Interfaces
         ProductColor GetColorById(int id);
         bool ExistColor(string colorname, string colorcode,int colorid);
         #endregion
+
+        #region ProductPropertyName
+        List<ProductProperty> ShowAllProperty();
+        int AddPropertyName(ProductProperty property);
+        bool ExistProperty(string name, int id);
+        bool AddpropertyForCategory(List<ProductProperty_Category> categories);
+        #endregion
     }
 }

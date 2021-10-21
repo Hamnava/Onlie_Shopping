@@ -12,10 +12,16 @@ namespace HamnavaKala.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IProductServices _product;
-        public ProductController(IProductServices product)
+        private readonly ICategoryService _category;
+        public ProductController(IProductServices product, ICategoryService category)
         {
             _product = product;
+            _category = category;
         }
+
+        #region ProductColor
+
+       
         public IActionResult ShowProductColor()
         {
             return View(_product.ShowAllProduct());
@@ -71,5 +77,57 @@ namespace HamnavaKala.Areas.Admin.Controllers
             TempData["Result"] = res ? "true" : "false";
             return RedirectToAction(nameof(ShowProductColor));
         }
+
+        #endregion
+
+        #region ProductPropertyName
+        [HttpGet]
+        public IActionResult ShowProperties()
+        {
+            return View(_product.ShowAllProperty());
+        }
+        [HttpGet]
+        public IActionResult AddProperty()
+        {
+            ViewBag.Category = _category.Showsubcategory();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddProperty(ProductProperty propertyName, List<int> Categoryid)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Category = _category.Showsubcategory();
+                return View(propertyName);
+            }
+            if (_product.ExistProperty(propertyName.ProductPropertyTitle, 0))
+            {
+                ModelState.AddModelError("ProductPropertyTitle", "خصوصیات تکراری است .");
+                return View(propertyName);
+            }
+            int nameid = _product.AddPropertyName(propertyName);
+            if (nameid <= 0)
+            {
+                TempData["Result"] = "false";
+                return RedirectToAction(nameof(ShowProperties));
+            }
+            List<ProductProperty_Category> Addpc = new List<ProductProperty_Category>();
+
+            foreach (var item in Categoryid)
+            {
+                Addpc.Add(new ProductProperty_Category
+                {
+                    CategroyId = item,
+                    ProductPropertyId = nameid,
+
+                });
+            }
+
+            bool res = _product.AddpropertyForCategory(Addpc);
+            TempData["Result"] = res ? "true" : "false";
+            return RedirectToAction(nameof(ShowProperties));
+        }
+        #endregion
     }
 }

@@ -16,5 +16,6 @@ namespace HamnavaKala.Core.Interfaces
         Category GetCategoryById(int categoryid);
         List<Category> ShowAllsubcategory(int categoryid);
         bool ExistCategory(string catfaName, string catEnName, int catid);
+        List<Category> Showsubcategory();
     }
 }
