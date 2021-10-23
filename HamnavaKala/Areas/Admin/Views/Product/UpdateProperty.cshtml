@@ -1,0 +1,106 @@
+﻿@model ProductProperty
+@{
+    ViewData["Title"] = "UpdateProperty";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    List<Category> categories = ViewBag.Category;
+    List<UpdateproductPropertyViewModel> findpropertynameforupdate = ViewBag.Propetry;
+    List<UpdateproductPropertyViewModel> Existproperty = new List<UpdateproductPropertyViewModel>();
+}
+
+
+<div class="col-lg-12 mt-4 p-3">
+    <div class="card-box">
+
+
+
+        <form asp-action="UpdateProperty" method="post" style="margin-top:5%;">
+            <input asp-for="ProductPropertyId" value="@findpropertynameforupdate.First().productproId" hidden/>
+            <div class="form-group">
+                <label asp-for="ProductPropertyTitle" for="emailAddress"> </label>
+                <input value="@findpropertynameforupdate.First().productpropTitle" asp-for="ProductPropertyTitle" type="text" parsley-trigger="change" placeholder="عنوان خصوصیت را وارد نمایید " class="form-control" data-parsley-id="6">
+                <span asp-validation-for="ProductPropertyTitle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+
+                <select class="form-control" id="select-category">
+                    @foreach (var item in categories)
+                    {
+                        if (findpropertynameforupdate.Where(c=> c.catid == item.CategoryId).Any())
+                        {
+                            Existproperty.Add(new UpdateproductPropertyViewModel
+                            {
+                                catid = item.CategoryId,
+                                productpropTitle = item.CategoryFaName
+                            });
+                        }
+                        else
+                        {
+                            <option value="@item.CategoryId">@item.CategoryFaName</option>
+                        }
+                    }
+                </select>
+                <button class="Add-Category btn btn-success" style="width: 10%; height: 13%; margin-top: 1%; margin-bottom: 1%; padding: 10px; border-radius: 10px;" type="button">انتخاب</button>
+                <div class="ListCategory">
+                    @foreach (var item in Existproperty)
+                    {
+                        <div style="background: gray;height: 50px;width: 48%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
+                     <label class="control-label col-md-12">  @item.productpropTitle  </label>
+                     <input type="hidden" name="CategoryId" value="  @item.catid  " />
+                     <a style="float:left;top:-25px;line-height: 36px;position: relative;height: 100%;border-radius: 5px;" class="btn btn-danger remove-category">حذف</a>
+                     </div>
+                    }
+                </div>
+
+            </div>
+
+
+            <div class="form-group text-right m-b-0">
+                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                    ثبت اطلاعات
+                </button>
+                <a href="/admin/product/Showallpropertyname" class="btn btn-default waves-effect waves-light m-l-5">
+                    لغو
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+
+
+    <script>
+
+        $(".Add-Category").click(function () {
+            if ($("#select-category").val()) {
+                var value = $("#select-category").children("option:selected").val();
+                var text = $("#select-category").children("option:selected").text();
+                $(".ListCategory").append(
+                    "<div style='background: gray;height: 50px;width: 48%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;'>"
+                    + "<label class='control-label col-md-12'>" + text + "</label>"
+                    + "<input type='hidden' name='CategoryId' value='" + value + "' />"
+                    + "<a style='float:left;top:-25px;line-height: 36px;position: relative;height: 100%;border-radius: 5px;' class='btn btn-danger remove-category'>حذف</a>"
+                    + "</div>"
+
+                );
+                $("#select-category").children("option:selected").remove();
+            }
+        });
+
+        $('.ListCategory').delegate(".remove-category", 'click', function () {
+            var content = $(this).parent();
+            var text = content.find($("label")).text();
+            var value = content.find($("input[type=hidden]")).val();
+            $("#select-category").append($('<option>', {
+                value: value,
+                text: text
+            }));
+            content.remove();
+        });
+
+    </script>
+
+}

@@ -19,8 +19,15 @@ using HamnavaKala.DataLayer.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Projects\pro\Onlie_Shopping\HamnavaKala\Areas\Admin\Views\_ViewImports.cshtml"
+using HamnavaKala.Core.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"642fb6da306c6dc03c7c8c5b120d36ece53be904", @"/Areas/Admin/Views/Shared/_AdminSideMenu.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6dbb07cf8555cd9ffc26c077e7b68bb22d35ffc9", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d308356332a175407b3b984ab0c7a3668a5f6279", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared__AdminSideMenu : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/AdminPanel/assets/images/users/avatar-1.jpg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +74,7 @@ using HamnavaKala.DataLayer.Entities;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"left side-menu\">\r\n    <div class=\"sidebar-inner slimscrollleft\">\r\n\r\n        <!-- User -->\r\n        <div class=\"user-box\">\r\n            <div class=\"user-img\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "642fb6da306c6dc03c7c8c5b120d36ece53be9049223", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "642fb6da306c6dc03c7c8c5b120d36ece53be9049420", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -109,7 +116,7 @@ using HamnavaKala.DataLayer.Entities;
 
                 <li>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90411328", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90411525", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-view-dashboard\"></i> <span> داشبورد </span> ");
             }
             );
@@ -130,7 +137,7 @@ using HamnavaKala.DataLayer.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </li>\r\n\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90413106", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90413303", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-collection-image\"></i> <span>  سلایدر </span> ");
             }
             );
@@ -151,7 +158,7 @@ using HamnavaKala.DataLayer.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </li>\r\n\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90414886", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90415083", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-colorize\"></i> <span>  رنگ محصول </span> ");
             }
             );
@@ -172,7 +179,7 @@ using HamnavaKala.DataLayer.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </li>\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90416661", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90416858", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-steam\"></i> <span>  دسته بندی ها </span> ");
             }
             );
@@ -193,7 +200,7 @@ using HamnavaKala.DataLayer.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </li>\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90418436", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90418633", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-gamepad\"></i> <span>    گارانتی ها </span> ");
             }
             );
@@ -214,7 +221,7 @@ using HamnavaKala.DataLayer.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </li>\r\n                <li>\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90420213", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "642fb6da306c6dc03c7c8c5b120d36ece53be90420410", async() => {
                 WriteLiteral("<i class=\"zmdi zmdi-folder-special\"></i> <span>    خصوصیات ها </span> ");
             }
             );

@@ -334,3 +334,4 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Vi
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddProperty.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_DeleteCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_updateCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdateProperty.cshtml.g.cs

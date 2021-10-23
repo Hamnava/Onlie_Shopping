@@ -19,8 +19,15 @@ using HamnavaKala.DataLayer.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Projects\pro\Onlie_Shopping\HamnavaKala\Areas\Admin\Views\_ViewImports.cshtml"
+using HamnavaKala.Core.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb9910f2667606cdeba60edf74b83e2b671d7ed0", @"/Areas/Admin/Views/Slider/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6dbb07cf8555cd9ffc26c077e7b68bb22d35ffc9", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d308356332a175407b3b984ab0c7a3668a5f6279", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Slider_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Slider>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Slider", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -76,7 +83,7 @@ using HamnavaKala.DataLayer.Entities;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<div class=\"col-sm-12\">\r\n    <div class=\"panel\">\r\n        <div class=\"panel-body\" style=\"margin-top:100px\">\r\n            <div class=\"row\">\r\n                <div class=\"col-sm-6\">\r\n                    <div class=\"m-b-30\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed08455", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed08652", async() => {
                 WriteLiteral("افزودن <i class=\"fa fa-plus\"></i>");
             }
             );
@@ -102,7 +109,7 @@ using HamnavaKala.DataLayer.Entities;
             <div class=""editable-responsive"">
                 <div id=""datatable-editable_wrapper"" class=""dataTables_wrapper form-inline dt-bootstrap no-footer"">
                     <div class=""row""><div class=""col-sm-6""><div class=""dataTables_length"" id=""datatable-editable_length""><label>Show <select name=""datatable-editable_length"" aria-controls=""datatable-editable"" class=""form-control input-sm"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed010424", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed010621", async() => {
                 WriteLiteral("10");
             }
             );
@@ -117,7 +124,7 @@ using HamnavaKala.DataLayer.Entities;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed011545", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed011742", async() => {
                 WriteLiteral("25");
             }
             );
@@ -132,7 +139,7 @@ using HamnavaKala.DataLayer.Entities;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed012666", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed012863", async() => {
                 WriteLiteral("50");
             }
             );
@@ -147,7 +154,7 @@ using HamnavaKala.DataLayer.Entities;
             }
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed013787", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed013984", async() => {
                 WriteLiteral("100");
             }
             );
@@ -280,7 +287,7 @@ using HamnavaKala.DataLayer.Entities;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                            <td class=\"sorting_1\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bb9910f2667606cdeba60edf74b83e2b671d7ed021426", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bb9910f2667606cdeba60edf74b83e2b671d7ed021623", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -337,7 +344,7 @@ AddHtmlAttributeValue("", 5662, item.ImgSlider, 5662, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                            <td class=\"actions\">\r\n\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed024647", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed024844", async() => {
                 WriteLiteral("<i class=\"fa fa-pencil\"></i>");
             }
             );
@@ -369,7 +376,7 @@ AddHtmlAttributeValue("", 5662, item.ImgSlider, 5662, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed027000", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed027197", async() => {
                 WriteLiteral("<i class=\"fa fa-trash-o\"></i>");
             }
             );
@@ -496,7 +503,7 @@ WriteAttributeValue("", 8116, sliderCount, 8116, 12, false);
 ");
             DefineSection("Scripts", async() => {
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed033476", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb9910f2667606cdeba60edf74b83e2b671d7ed033673", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

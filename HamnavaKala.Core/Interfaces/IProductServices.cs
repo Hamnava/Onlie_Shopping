@@ -1,4 +1,5 @@
-﻿using HamnavaKala.DataLayer.Entities;
+﻿using HamnavaKala.Core.ViewModels;
+using HamnavaKala.DataLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,10 @@ namespace HamnavaKala.Core.Interfaces
         int AddPropertyName(ProductProperty property);
         bool ExistProperty(string name, int id);
         bool AddpropertyForCategory(List<ProductProperty_Category> categories);
+        List<UpdateproductPropertyViewModel> FindProductPropertyNameForUpdate(int Productpropertyid);
+        bool UpdateProductProperty(ProductProperty property);
+        bool DeletePropertyforCategory(int propid);
+        ProductProperty GetProductPropertyById(int id);
         #endregion
     }
 }
