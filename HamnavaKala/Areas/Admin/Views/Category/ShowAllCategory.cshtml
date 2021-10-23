@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="m-b-30">
-                        <a asp-controller="Category" asp-action="AddCategory"  class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
+                        <a asp-controller="Category" asp-action="AddCategory" class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -74,11 +74,11 @@
                                                 <td class="sorting_1">@counter</td>
                                                 <td class="sorting_1">@item.CategoryFaName</td>
                                                 <td class="sorting_1">@item.CategoryEnName</td>
-                                                <td class="sorting_1"><a asp-action="ShowAllSubCategory" asp-controller="Category" asp-route-id="@item.CategoryId" class="btn btn-success" >زیر دسته ها </a></td>
+                                                <td class="sorting_1"><a asp-action="ShowAllSubCategory" asp-controller="Category" asp-route-id="@item.CategoryId" class="btn btn-success">زیر دسته ها </a></td>
                                                 <td class="actions">
 
-                                                    <a asp-action="UpdateCategory" asp-route-id="@item.CategoryId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="#showmodal=/Admin/category/UpdateCategory/@item.CategoryId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#showmodal=/Admin/category/DeleteCategory/@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                             counter++;
@@ -102,6 +102,10 @@
             </div>
         </div>
         <!-- end: panel body -->
-
+        <partial name="_MainModal" />
     </div> <!-- end panel -->
 </div> <!-- end col-->
+
+@section Scripts{
+   
+}

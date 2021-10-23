@@ -325,8 +325,6 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Vi
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\AddCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\ShowAllSubCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\ShowAllSubsubCategory.cshtml.g.cs
-D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\UpdateCategory.cshtml.g.cs
-D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\DeleteCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Gurantee\ShowGurantee.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_MainModal.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Gurantee\_AddGurantee.cshtml.g.cs
@@ -334,3 +332,5 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Vi
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Gurantee\_DeleteGurantee.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowProperties.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddProperty.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_DeleteCategory.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_updateCategory.cshtml.g.cs

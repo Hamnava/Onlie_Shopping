@@ -91,7 +91,7 @@ function message(final) {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'گارانتی با موفقیت اضافه شد .',
+                    title: 'دیتا با موفقیت اضافه شد .',
                     showConfirmButton: false,
                     timer: 1800
                 })
@@ -104,7 +104,7 @@ function message(final) {
                 Swal.fire({
                     position: 'top-start',
                     icon: 'success',
-                    title: 'گارانتی با موفقیت ویرایش شد .',
+                    title: 'دیتا با موفقیت ویرایش شد .',
                     showConfirmButton: false,
                     timer: 1800
                 })
@@ -118,7 +118,7 @@ function message(final) {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'گارانتی با موفقیت حذف شد .',
+                    title: 'دیتا با موفقیت حذف شد .',
                     showConfirmButton: false,
                     timer: 1800
                 })
@@ -144,7 +144,7 @@ function message(final) {
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: 'گارانتی تکراری است .',
+                    title: 'دیتا تکراری است .',
                     showConfirmButton: false,
                     timer: 1800
                 })

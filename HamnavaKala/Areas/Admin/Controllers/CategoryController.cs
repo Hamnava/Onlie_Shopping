@@ -67,7 +67,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(cat);
+            return PartialView("_updateCategory",cat);
         }
 
         [HttpPost]
@@ -75,16 +75,15 @@ namespace HamnavaKala.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(cat);
+                return RedirectToAction(nameof(ShowAllCategory));
             }
             if (_category.ExistCategory(cat.CategoryFaName, cat.CategoryEnName, cat.CategoryId))
             {
-                ModelState.AddModelError("CategoryEnName", "دسته بندی تکراری میباشد.");
-                return View(cat);
+                return Json(5);
             }
             bool res = _category.UpdateCategory(cat);
-            TempData["Result"] = res ? "true" : "false";
-            return RedirectToAction(nameof(ShowAllCategory));
+            int sendJson = res ? 2 : 4;
+            return Json(sendJson);
         }
 
         [HttpGet]
@@ -95,16 +94,17 @@ namespace HamnavaKala.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            return View(cat);
+            return PartialView("_DeleteCategory",cat);
         }
 
         [HttpPost]
         public IActionResult DeleteCategory(Category cat)
         {
             cat.IsDelete = true;
-            bool res = _category.UpdateCategory(cat);
-            TempData["Result"] = res ? "true" : "false";
-            return RedirectToAction(nameof(ShowAllCategory));
+            bool grid = _category.UpdateCategory(cat);
+            int sendJson = grid ? 3 : 4;
+            return Json(sendJson);
+            
         }
     }
 }

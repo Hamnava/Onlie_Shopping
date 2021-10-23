@@ -1,19 +1,18 @@
-﻿@model Category
-@{
-    ViewData["Title"] = "ویرایش دسته بندی";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
-}
+﻿
+@model Category
+
+<div class="row">
+    <h2 class="text-center text-info" style="margin-top:-15px;">ویرایش دسته بندی</h2>
+    <div class="col-md-12">
+        <form asp-action="UpdateCategory" method="post"
+              data-ajax="true"
+              data-Success="Refresh"
+              enctype="multipart/form-data">
 
 
-<div class="col-lg-12" style="margin-top:100px">
-    <div class="card-box">
-        <h4 class="header-title m-t-0 m-b-30">ویرایش دسته بندی</h4>
+            <input asp-for="SubCategory" hidden />
 
-        <form asp-action="UpdateCategory" method="post">
-
-            <input asp-for="SubCategory"  hidden />
-
-            <input asp-for="CategoryId"  hidden />
+            <input asp-for="CategoryId" hidden />
 
             <div class="form-group">
                 <label asp-for="CategoryFaName"></label>
@@ -35,9 +34,6 @@
                     لغو
                 </a>
             </div>
-
         </form>
     </div>
-    <!-- end col -->
-
 </div>

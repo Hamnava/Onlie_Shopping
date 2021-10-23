@@ -77,8 +77,8 @@
                                                 <td class="sorting_1"><a asp-action="ShowAllSubsubCategory" asp-controller="Category" asp-route-id="@item.CategoryId" class="btn btn-success">زیر دسته ها </a></td>
                                                 <td class="actions">
 
-                                                    <a asp-action="UpdateCategory" asp-route-id="@item.CategoryId"  class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                                    <a asp-action="DeleteCategory" asp-route-id="@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="#showmodal=/Admin/category/UpdateCategory/@item.CategoryId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                                    <a href="#showmodal=/Admin/category/DeleteCategory/@item.CategoryId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                             counter++;
@@ -102,6 +102,6 @@
             </div>
         </div>
         <!-- end: panel body -->
-
+        <partial name="_MainModal" />
     </div> <!-- end panel -->
 </div> <!-- end col-->
