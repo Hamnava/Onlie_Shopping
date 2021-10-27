@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SliderForCategoryViewModel>
+@{
+    int active = 0;
+}
+<div class="slider-widget-products">
+    <div class="widget widget-product card">
+        <header class="card-header">
+            <span class="title-one">دوربین</span>
+            <h3 class="card-title"></h3>
+        </header>
+        <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                    @foreach (var item in Model.GroupBy(p=> p.productid))
+                    {
+                        <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
+                            <div class="item">
+                                <a href="#" class="d-block hover-img-link">
+                                    <img src="~/Site/assets/images/slider-product/@item.First().productImg" class="img-fluid" alt="">
+                                </a>
+                                <h2 class="post-title">
+                                    <a href="#">
+                                        @item.First().productname
+                                    </a>
+                                </h2>
+                                <div class="price">
+                                    @if (item.First().specialprice >= item.First().mainprice)
+                                    {
+                                        <ins><span>@item.First().mainprice<span>افغانی</span></span></ins>
+                                    }
+                                    else
+                                    {
+                                        <del><span>@item.First().mainprice<span>افغانی</span></span></del>
+                                        <ins><span>@item.First().specialprice<span>افغانی</span></span></ins>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" role="presentation" class="owl-prev disabled">
+                    <i class="fa fa-angle-right"></i>
+                </button>
+                <button type="button" role="presentation" class="owl-next">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+            </div>
+            <div class="owl-dots disabled"></div>
+        </div>
+    </div>
+</div>

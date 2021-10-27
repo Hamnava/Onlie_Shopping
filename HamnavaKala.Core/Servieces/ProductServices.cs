@@ -281,6 +281,22 @@ namespace HamnavaKala.Core.Servieces
                                                              }).ToList();
             return specialproducts;
         }
+
+        public List<SliderForCategoryViewModel> ShowSliderForCategory(int categoryid)
+        {
+            List<SliderForCategoryViewModel> slider = (from pr in _context.ProductPrices
+                                                       join p in _context.Products on pr.ProductId equals p.ProductId
+                                                       where (p.CategoryId == categoryid)
+                                                       select new SliderForCategoryViewModel
+                                                       {
+                                                           productid = p.ProductId,
+                                                           productImg = p.ProductImage,
+                                                           productname = p.ProductFaName,
+                                                           mainprice = pr.mainPrice,
+                                                           specialprice = pr.EndDateDiscount >= DateTime.Now.Date && pr.specialprice <= pr.mainPrice ? pr.specialprice : pr.mainPrice
+                                                       }).ToList();
+            return slider;
+        }
         #endregion
 
         #region Review
