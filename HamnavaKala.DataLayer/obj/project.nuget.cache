@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uB8MYhNEdN0LkFhF+E74GciIoPAja4i64QTIYYwAi76wYHeAcRAbF0Jgzl4IPu5K5/8LsjD6J/FCKc6N8NpRJw==",
+  "dgSpecHash": "PabX3+G8q5ErdaHIxK/lRUITPna51b+RbL6GAi9miB7CCQaU0fNj9FCvaBNoK6/dDf6URi4kgx8uw0L2A7nH1g==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+  "projectFilePath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hamnava\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hamnava\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

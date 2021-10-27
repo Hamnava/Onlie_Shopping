@@ -79,5 +79,10 @@ namespace HamnavaKala.Core.Servieces
             SliderCount = SliderCount / 2;
             return SliderCount;
         }
+
+        public List<Slider> ShowSliderForUser()
+        {
+            return _context.Sliders.Where(s => s.IsActive == true).ToList();
+        }
     }
 }

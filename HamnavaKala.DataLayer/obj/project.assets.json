@@ -5756,11 +5756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+      "projectUniqueName": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
       "projectName": "HamnavaKala.DataLayer",
-      "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
+      "projectPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj",
       "packagesPath": "C:\\Users\\Hamnava\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\obj\\",
+      "outputPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

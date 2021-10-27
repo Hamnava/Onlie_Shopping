@@ -15,5 +15,6 @@ namespace HamnavaKala.Core.Interfaces
         bool UpdateSlider(Slider slider);
         bool DeleteSlider(Slider slider);
         public int SliderCount();
+        List<Slider> ShowSliderForUser();
     }
 }

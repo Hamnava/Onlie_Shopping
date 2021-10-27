@@ -257,7 +257,30 @@ namespace HamnavaKala.Core.Servieces
             return _context.PropertyValues.Where(p => p.ProductId == productid).ToList();
         }
 
-       
+       public List<specialproductViewModel> ShowallSpecialPrice()
+        {
+            List<specialproductViewModel> specialproducts = (from pr in _context.ProductPrices
+                                                             join p in _context.Products on pr.ProductId equals p.ProductId
+                                                             where (pr.specialprice < pr.mainPrice && pr.EndDateDiscount >= DateTime.Now.Date)
+                                                             select new specialproductViewModel
+                                                             {
+                                                                 productfaname = p.ProductFaName,
+                                                                 productid = p.ProductId,
+                                                                 Enddatespecialprice = pr.EndDateDiscount,
+                                                                 mainprice = pr.mainPrice,
+                                                                 specialprice = pr.specialprice,
+                                                                 Productimg = p.ProductImage,
+                                                                 ValuesList = (from pv in _context.PropertyValues
+                                                                               join pn in _context.ProductProperties on pv.productpropertyid equals pn.ProductPropertyId
+                                                                               where(pv.ProductId == pr.ProductId)
+                                                                               select new ValueViewModel
+                                                                               {
+                                                                                   propname = pn.ProductPropertyTitle,
+                                                                                   value = pv.Propertvalue
+                                                                               }).Take(3).ToList()
+                                                             }).ToList();
+            return specialproducts;
+        }
         #endregion
 
         #region Review

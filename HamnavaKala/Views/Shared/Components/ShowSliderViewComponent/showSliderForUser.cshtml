@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Slider>
+
+@{
+    int active = 1;
+}
+<!--carouselExampleIndicators-->
+<div class="slider-main-container d-block">
+    <div id="mainslider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+                <li data-target="#mainslider" data-slide-to="@i" class="@(i==0? "active": "")"></li>
+
+            }
+
+        </ol>
+        <div class="carousel-inner">
+            @foreach (var item in Model)
+            {
+                <div class="carousel-item @(active == 1? "active":"")">
+                    <a href="@item.SliderLink">
+                        <img title="@item.SliderTitle" src="~/Site/assets/images/slider-main/@item.ImgSlider" class="d-block w-100" alt="@item.SliderAlt">
+                    </a>
+                </div>
+                active++;
+            }
+
+
+        </div>
+        <a class="carousel-control-prev" href="#mainslider" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#mainslider" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

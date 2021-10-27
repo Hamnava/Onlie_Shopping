@@ -34,3 +34,20 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\ref\HamnavaKala
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.pdb
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.genruntimeconfig.cache
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.CopyComplete
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.Core.deps.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.Core.runtimeconfig.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.Core.runtimeconfig.dev.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.Core.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\ref\HamnavaKala.Core.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.Core.pdb
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.DataLayer.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\bin\Debug\net5.0\HamnavaKala.DataLayer.pdb
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.AssemblyReference.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.AssemblyInfoInputs.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.AssemblyInfo.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.CoreCompileInputs.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\ref\HamnavaKala.Core.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.pdb
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.genruntimeconfig.cache

@@ -7214,11 +7214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
+      "projectUniqueName": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
       "projectName": "HamnavaKala",
-      "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
+      "projectPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
       "packagesPath": "C:\\Users\\Hamnava\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala\\obj\\",
+      "outputPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7238,11 +7238,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj": {
-              "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj"
+            "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj": {
+              "projectPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.Core\\HamnavaKala.Core.csproj"
             },
-            "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj": {
-              "projectPath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj"
+            "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj": {
+              "projectPath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala.DataLayer\\HamnavaKala.DataLayer.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ja8+ndzLlEPPJuJP7EFvTz3iTFgsiC5kRe9c+doDN6NS0/2wXCCQPVq/AsmOOJGhtcGiP9yojWxxmIwigdMzSg==",
+  "dgSpecHash": "yaQKgbtyPSeb/ZQ80x5JIUS0IEyx/b+6EZPYnvSZAsPxC+Hc7k6PSY9HAM1DDeH8tszojry4LXjgLOJuyL5iCA==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\pro\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
+  "projectFilePath": "D:\\My Lessons\\AspNet Core\\Git and GitHub\\Git\\Onlie_Shopping\\HamnavaKala\\HamnavaKala.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hamnava\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hamnava\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

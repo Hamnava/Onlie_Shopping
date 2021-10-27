@@ -39,8 +39,8 @@ namespace HamnavaKala.Core.Interfaces
         bool DeletePropertyValueforProduct(int productid);
         bool AddOrUpdateproductPropertyForProduct(int productid, List<PropertyValue> propertyValues);
         List<PropertyValue> showpropertyValue(int productid);
-      
 
+        List<specialproductViewModel> ShowallSpecialPrice();
         #endregion
 
         #region Review
