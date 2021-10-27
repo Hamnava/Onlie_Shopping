@@ -75,7 +75,7 @@
                                     {
                                         <tr class="gradeX odd" role="row">
                                             <td class="sorting_1">@item.SliderId</td>
-                                            <td class="sorting_1"><img width="140" height="100" src="~/Site/assets/images/slider-main/@item.ImgSlider" /></td>
+                                            <td class="sorting_1"><img width="140" height="80" src="~/Site/assets/images/slider-main/@item.ImgSlider" /></td>
                                             <td class="sorting_1">@item.SliderTitle</td>
                                             <td>
                                                 @item.SliderLink
@@ -85,7 +85,7 @@
                                             <td class="actions">
 
                                                 <a asp-action="UpdateSlider" asp-route-id="@item.SliderId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                                <a asp-action="DeleteSlider" asp-route-id="@item.SliderId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                <a href="#showmodal=/Admin/slider/deleteslider/@item.SliderId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                         counter++;
@@ -105,9 +105,9 @@
                                     <li class="paginate_button previous " aria-controls="datatable-editable" tabindex="0" id="datatable-editable_previous"><a href="/Admin/Slider/Index?page=1">صفحه اول</a></li>
                                     @for (int i = 1; i <= sliderCount; i++)
                                     {
-                                    <li class="paginate_button @(i==page?"active":"")" aria-controls="datatable-editable" tabindex="0">
-                                    <a href="/Admin/Slider/Index?page=@i">@i</a>
-                                    </li>
+                                        <li class="paginate_button @(i==page?"active":"")" aria-controls="datatable-editable" tabindex="0">
+                                            <a href="/Admin/Slider/Index?page=@i">@i</a>
+                                        </li>
                                     }
                                     <li class="paginate_button next" aria-controls="datatable-editable" tabindex="0" id="datatable-editable_next"><a href="/Admin/Slider/Index?page=@sliderCount">صفحه آخر</a></li>
                                 </ul>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <!-- end: panel body -->
-
+        <partial name="_MainModal" />
     </div> <!-- end panel -->
 </div> <!-- end col-->
 

@@ -12,5 +12,6 @@ namespace HamnavaKala.Core.ViewModels
         public int productproId { get; set; }
         public int catid { get; set; }
         public string productpropTitle { get; set; }
+        
     }
 }

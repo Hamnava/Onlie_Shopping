@@ -18,8 +18,8 @@ namespace HamnavaKala.DataLayer.Entities
         public int mainPrice { get; set; }
 
         [Display(Name = " قیمت ویژه ")]
-        [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
-        public int specialprice { get; set; }
+       
+        public int? specialprice { get; set; }
 
         [Display(Name = "  تعداد کالا ")]
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
@@ -31,7 +31,7 @@ namespace HamnavaKala.DataLayer.Entities
 
 
         public DateTime CteateDate { get; set; }
-        public DateTime EndDateDiscount { get; set; }
+        public DateTime? EndDateDiscount { get; set; }
         public int productColor { get; set; }
         public int productGurantee { get; set; }
         public int ProductId { get; set; }

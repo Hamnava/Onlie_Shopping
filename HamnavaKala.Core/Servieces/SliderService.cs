@@ -31,9 +31,8 @@ namespace HamnavaKala.Core.Servieces
             }
         }
 
-        public bool DeleteSlider(int id)
+        public bool DeleteSlider(Slider slider)
         {
-            var slider = _context.Sliders.Find(id);
             try
             {
                 _context.Sliders.Remove(slider);

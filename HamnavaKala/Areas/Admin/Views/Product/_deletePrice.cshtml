@@ -1,0 +1,22 @@
+﻿@model ProductPrice
+
+<div class="row">
+    <h2 class="text-center text-info" style="margin-top:-15px;">حذف قیمت محصول </h2>
+    <div class="col-md-12">
+        <form asp-action="DeletePrice" method="post"
+              data-ajax="true"
+              data-Success="Refresh"
+              enctype="multipart/form-data">
+
+            <h3>آیا از حذف این قیمت که برای محصول  <span class="text-success">@Model.product.ProductFaName</span> ثبت گردیده بود مطمین هستید؟</h3>
+            @Model.mainPrice
+            <input asp-for="ProductpriceId" hidden />
+
+            <div class="form-group text-right mx-4">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+                <button type="submit" value="Create" class="btn btn-danger">حذف اطلاعات</button>
+            </div>
+
+        </form>
+    </div>
+</div>

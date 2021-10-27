@@ -74,7 +74,7 @@
                                                 <td class="actions">
 
                                                     <a asp-action="UpdateProperty" asp-route-id="@item.ProductPropertyId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                                    <a asp-action="UpdateProperty" asp-route-id="@item.ProductPropertyId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                                    <a href="#showmodal=/Admin/product/DeleteProperty/@item.ProductPropertyId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                             counter++;
@@ -98,6 +98,6 @@
             </div>
         </div>
         <!-- end: panel body -->
-
+    <partial name="_MainModal" />
     </div> <!-- end panel -->
 </div> <!-- end col-->

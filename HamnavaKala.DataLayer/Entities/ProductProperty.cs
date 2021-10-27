@@ -17,8 +17,10 @@ namespace HamnavaKala.DataLayer.Entities
         [MinLength(3, ErrorMessage = "{0} نمیتواند کمتر از {1} باشد.")]
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string ProductPropertyTitle { get; set; }
+        public bool IsDelete { get; set; }
 
         // Relations to other tables
         public List<ProductProperty_Category> productProperty_Categories { get; set; }
+        public List<PropertyValue> propertyValues { get; set; }
     }
 }

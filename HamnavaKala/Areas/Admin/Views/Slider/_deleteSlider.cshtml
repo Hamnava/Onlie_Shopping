@@ -1,0 +1,25 @@
+﻿
+@model Slider
+
+<div class="row">
+    <h2 class="text-center text-info" style="margin-top:-15px;">حذف سلایدر</h2>
+    <div class="col-md-12">
+        <form asp-action="DeleteSlider" method="post" 
+              data-ajax="true"
+              data-Success="Refresh"
+              enctype="multipart/form-data">
+            <div class="text-center">
+                <img width="140" height="80" src="~/Site/assets/images/slider-main/@Model.ImgSlider" />
+                <h4>آیا از حذف این سلایدر مطمین هستید؟</h4>
+            </div>
+            <input asp-for="ImgSlider" type="hidden" />
+            <input asp-for="SliderId" hidden />
+
+            <div class="form-group text-right">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
+                <button type="submit" value="Create" class="btn btn-danger">حذف</button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -43,7 +43,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
                 ModelState.AddModelError("ImgSlider", "لطفا یک عکس برای سلایدر انتخاب نمایید");
                 return View(slider);
             }
-            string imgname = uploadImg.CreateImg(file);
+            string imgname = uploadImg.CreateImg(file, "slider-main");
             if (imgname == "flase")
             {
                 TempData["Result"] = "failed";
@@ -80,7 +80,7 @@ namespace HamnavaKala.Areas.Admin.Controllers
             }
             if (file != null)
             {
-                string imgname = uploadImg.CreateImg(file);
+                string imgname = uploadImg.CreateImg(file, "slider-main");
                 if (imgname == "false")
                 {
                     TempData["Result"] = "failed";
@@ -111,11 +111,11 @@ namespace HamnavaKala.Areas.Admin.Controllers
                 TempData["NotFound"] = "NotFound";
                 return RedirectToAction(nameof(Index));
             }
-            return View(slider);
+            return PartialView("_deleteSlider",slider);
         }
 
         [HttpPost]
-        public IActionResult DeleteSlider(int id, Slider slider)
+        public IActionResult DeleteSlider(Slider slider, IFormFile file)
         {
 
             bool DeleteImage = uploadImg.DeleteImg("slider-main", slider.ImgSlider);
@@ -124,9 +124,9 @@ namespace HamnavaKala.Areas.Admin.Controllers
                 TempData["Result"] = "failed";
                 return RedirectToAction(nameof(Index));
             }
-            bool res = _context.DeleteSlider(id);
-            TempData["Result"] = res ? "success" : "failed";
-            return RedirectToAction(nameof(Index));
+            bool res = _context.DeleteSlider(slider);
+            int sendJson = res ? 3 : 4;
+            return Json(sendJson);
         }
     }
 }

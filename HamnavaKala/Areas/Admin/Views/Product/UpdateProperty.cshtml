@@ -14,10 +14,10 @@
 
 
         <form asp-action="UpdateProperty" method="post" style="margin-top:5%;">
-            <input asp-for="ProductPropertyId" value="@findpropertynameforupdate.First().productproId" hidden/>
+            <input asp-for="ProductPropertyId"  hidden/>
             <div class="form-group">
                 <label asp-for="ProductPropertyTitle" for="emailAddress"> </label>
-                <input value="@findpropertynameforupdate.First().productpropTitle" asp-for="ProductPropertyTitle" type="text" parsley-trigger="change" placeholder="عنوان خصوصیت را وارد نمایید " class="form-control" data-parsley-id="6">
+                <input asp-for="ProductPropertyTitle" type="text" parsley-trigger="change" placeholder="عنوان خصوصیت را وارد نمایید " class="form-control" data-parsley-id="6">
                 <span asp-validation-for="ProductPropertyTitle" class="text-danger"></span>
             </div>
 

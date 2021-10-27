@@ -26,8 +26,15 @@ using HamnavaKala.Core.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\Projects\pro\Onlie_Shopping\HamnavaKala\Areas\Admin\Views\_ViewImports.cshtml"
+using HamnavaKala.Core.Classes;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c", @"/Areas/Admin/Views/Product/ShowProductColor.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d308356332a175407b3b984ab0c7a3668a5f6279", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"397e92ca8624df7ee11a13a28e560d49209981fb", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Product_ShowProductColor : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductColor>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -71,7 +78,7 @@ using HamnavaKala.Core.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"col-sm-12\">\r\n    <div class=\"panel\">\r\n        <div class=\"panel-body\" style=\"margin-top:100px\">\r\n            <div class=\"row\">\r\n                <div class=\"col-sm-6\">\r\n                    <div class=\"m-b-30\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c5840", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c6034", async() => {
                 WriteLiteral("افزودن <i class=\"fa fa-plus\"></i>");
             }
             );
@@ -237,7 +244,7 @@ WriteAttributeValue("", 4541, item.colorCode, 4541, 15, false);
             WriteAttributeValue(" ", 4569, "height:40px;", 4570, 13, true);
             EndWriteAttribute();
             WriteLiteral("></a></td>\r\n                                                <td class=\"actions\">\r\n\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c14633", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c14827", async() => {
                 WriteLiteral("<i class=\"fa fa-pencil\"></i>");
             }
             );
@@ -269,7 +276,7 @@ WriteAttributeValue("", 4541, item.colorCode, 4541, 15, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c17010", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0321b0747ceb0681cdc25ba4f3a2f158e4fd0e8c17204", async() => {
                 WriteLiteral("<i class=\"fa fa-trash-o\"></i>");
             }
             );

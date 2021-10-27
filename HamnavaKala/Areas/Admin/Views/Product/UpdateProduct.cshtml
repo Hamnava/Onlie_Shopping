@@ -1,0 +1,92 @@
+﻿
+@model Product
+@{
+    ViewData["Title"] = " ویرایش محصول";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-lg-12" style="margin-top:100px">
+    <div class="card-box">
+        <h4 class="header-title m-t-0 m-b-30">ویرایش محصول</h4>
+
+        <form asp-action="UpdateProduct" enctype="multipart/form-data" method="post">
+
+            <input asp-for="ProductId" hidden />
+            <input asp-for="ProductCreate" hidden />
+
+            <div class="form-group">
+                <label asp-for="ProductFaName"></label>
+                <input asp-for="ProductFaName" type="text" required="" placeholder="عنوان فارسی را وارد کنید" class="form-control">
+                <span asp-validation-for="ProductFaName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductEnName"></label>
+                <input asp-for="ProductEnName" type="text" required="" placeholder="عنوان انگلیسی محصول را وارد کنید" class="form-control">
+                <span asp-validation-for="ProductEnName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductWeight"></label>
+                <input asp-for="ProductWeight" required="" placeholder=" وزن محصول را وارد کنید" class="form-control">
+                <span asp-validation-for="ProductWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select class="form-control" asp-for="ProductStar">
+                    <option value="1">تک ستاره</option>
+                    <option value="2">دو ستاره</option>
+                    <option value="3">سه ستاره</option>
+                    <option value="4">چهار ستاره</option>
+                    <option value="5">پنج ستاره</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductTag"></label>
+                <textarea asp-for="ProductTag" type="text" required="" class="form-control">
+                 
+                </textarea>
+
+                <div class="alert alert-warning" style="margin-top:10px">
+                    برای جدا  ساختن برچسب ها از <strong>^</strong>  استفاده نمایید.
+                </div>
+            </div>
+            <div class="form-group checkbox checkbox-custom">
+                <input asp-for="IsActive" type="checkbox" class="form-control">
+                <label asp-for="IsActive" for="IsActive"></label>
+            </div>
+            <div class="form-group checkbox checkbox-custom">
+                <input asp-for="IsOriginal" type="checkbox" class="form-control">
+                <label asp-for="IsOriginal" for="IsOriginal"></label>
+            </div>
+
+            <div class="form-group">
+                <label>دسته بندی</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Category,"CategoryId","CategoryFaName"))">
+                    <option value="">انتخاب نمایید</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label> برند</label>
+                <select asp-for="BrandId" class="form-control" asp-items="@(new SelectList(ViewBag.Brand,"BrandId","BrandName"))">
+                    <option value="">انتخاب نمایید</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input name="file" type="file" class="form-control" />
+                <label > تصویر محصول </label>
+                <input asp-for="ProductImage" type="hidden" class="form-control"  />
+                <img width="140" height="70" src="~/Site/assets/images/slider-product/@Model.ProductImage" />
+            </div>
+            <div class="form-group text-right m-b-0">
+                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                    تایید
+                </button>
+                <a asp-action="index" class="btn btn-default waves-effect waves-light m-l-5">
+                    لغو
+                </a>
+            </div>
+
+        </form>
+    </div>
+    <!-- end col -->
+
+</div>

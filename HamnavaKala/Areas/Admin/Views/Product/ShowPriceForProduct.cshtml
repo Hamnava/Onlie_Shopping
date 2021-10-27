@@ -1,0 +1,120 @@
+﻿@model IEnumerable<showPriceForProductViewModel>
+@{
+    ViewData["Title"] = "نمایش قیمت ها";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int counter = 1;
+}
+
+<div class="col-sm-12">
+    <div class="panel">
+        <div class="panel-body" style="margin-top:100px">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="m-b-30">
+                        <a asp-controller="Product" asp-action="AddPrice" asp-route-id="@ViewBag.id" class="btn btn-primary waves-effect waves-light">افزودن <i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editable-responsive">
+                <div id="datatable-editable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @if (TempData["Result"] != null)
+                            {
+                                @if (TempData["Result"].ToString() == "true")
+                                {
+                                    <div class="alert alert-info alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        عملیات به شکل	<strong>موفقیت آمیز</strong> انجام شد
+                                    </div>
+                                }
+
+                                else
+                                {
+                                    <div class="alert alert-danger alert-dismissable">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        عملیات به شکل	<strong>موفقیت آمیز</strong> انجام نشد
+                                    </div>
+                                }
+
+
+                            }
+                            @if (TempData["NotFound"] != null)
+                            {
+                                <script>
+                                    setTimeout(function () {
+                                        Swal.fire({
+                                            position: 'top-end',
+                                            icon: 'error',
+                                            title: 'قیمت با این مشخصات پیدا نشد!',
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        })
+                                    }, 100)
+
+                                </script>
+                            }
+                            <table class="table table-striped dataTable no-footer" id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th>شماره</th>
+                                        <th> قیمت اصلی</th>
+                                        <th>قیمت ویژه </th>
+                                        <th>تعداد محصول </th>
+                                        <th>تعداد مجاز خرید </th>
+                                        <th>نام رنگ </th>
+                                        <th>گارانتی </th>
+                                        <th>تاریخ ایجاد </th>
+                                        <th>تاریخ ختم تخفیف </th>
+
+                                        <th style="width: 110px;">فعالیت</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Count() > 0)
+                                    {
+                                        @foreach (var item in Model)
+                                        {
+                                    <tr class="gradeX odd" role="row">
+                                        <td class="sorting_1">@counter</td>
+                                        <td class="sorting_1">@item.mainPrice</td>
+                                        <td class="sorting_1">@item.specialprice</td>
+                                        <td class="sorting_1">@item.count</td>
+                                        <td class="sorting_1">@item.maxorderCount</td>
+                                        <td class="sorting_1">@item.ColorName.</td>
+                                        <td class="sorting_1">@item.GuranteeName</td>
+                                        <td class="sorting_1">@item.CteateDate.ConvertDate()</td>
+                                        <td class="sorting_1">@item.EndDateDiscount?.ConvertDate()</td>
+
+
+
+                                        <td class="actions">
+                                            <a asp-action="UpdatePrice" asp-route-id="@item.ProductpriceId" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                            <a href="#showmodal=/Admin/product/DeletePrice/@item.ProductpriceId" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                            counter++;
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr class="gradeX odd" role="row">
+                                            <td class="sorting_1">  قیمتی موجود نمی باشد</td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end: panel body -->
+        <partial name="_MainModal" />
+    </div> <!-- end panel -->
+</div> <!-- end col-->

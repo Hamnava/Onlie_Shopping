@@ -19,10 +19,13 @@ namespace HamnavaKala.DataLayer.Entities
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string Propertvalue { get; set; }
 
+        public int productpropertyid { get; set; }
         public int ProductId { get; set; }
 
         // Relations to other tables
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
+        [ForeignKey("productpropertyid")]
+        public ProductProperty productProperty { get; set; }
     }
 }

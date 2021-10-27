@@ -273,7 +273,7 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.Property<DateTime>("CteateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndDateDiscount")
+                    b.Property<DateTime?>("EndDateDiscount")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ProductId")
@@ -294,7 +294,7 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.Property<int>("productGurantee")
                         .HasColumnType("int");
 
-                    b.Property<int>("specialprice")
+                    b.Property<int?>("specialprice")
                         .HasColumnType("int");
 
                     b.HasKey("ProductpriceId");
@@ -314,6 +314,9 @@ namespace HamnavaKala.DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("ProductPropertyTitle")
                         .IsRequired()
@@ -362,9 +365,14 @@ namespace HamnavaKala.DataLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("productpropertyid")
+                        .HasColumnType("int");
+
                     b.HasKey("PropertyValueId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("productpropertyid");
 
                     b.ToTable("PropertyValues");
                 });
@@ -621,7 +629,15 @@ namespace HamnavaKala.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("HamnavaKala.DataLayer.Entities.ProductProperty", "productProperty")
+                        .WithMany("propertyValues")
+                        .HasForeignKey("productpropertyid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Product");
+
+                    b.Navigation("productProperty");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Question", b =>
@@ -694,6 +710,8 @@ namespace HamnavaKala.DataLayer.Migrations
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.ProductProperty", b =>
                 {
                     b.Navigation("productProperty_Categories");
+
+                    b.Navigation("propertyValues");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.User", b =>

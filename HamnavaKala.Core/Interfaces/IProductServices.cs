@@ -11,7 +11,7 @@ namespace HamnavaKala.Core.Interfaces
    public interface IProductServices
     {
         #region ProductColor
-        List<ProductColor> ShowAllProduct();
+        List<ProductColor> ShowAllProductColor();
         int AddColor(ProductColor productColor);
         bool UpdateColor(ProductColor productColor);
         ProductColor GetColorById(int id);
@@ -27,6 +27,34 @@ namespace HamnavaKala.Core.Interfaces
         bool UpdateProductProperty(ProductProperty property);
         bool DeletePropertyforCategory(int propid);
         ProductProperty GetProductPropertyById(int id);
+        #endregion
+
+        #region Product
+        List<Product> ShowallProduct();
+        int AddProduct(Product product);
+        Product GetProductById(int id);
+        bool UpdateProduct(Product product);
+        int FindCategoryForproduct(int productid);
+        List<ProductProperty> showallPropertyforCategory(int categoryid);
+        bool DeletePropertyValueforProduct(int productid);
+        bool AddOrUpdateproductPropertyForProduct(int productid, List<PropertyValue> propertyValues);
+        List<PropertyValue> showpropertyValue(int productid);
+      
+
+        #endregion
+
+        #region Review
+        Review Findreviewbyproduct(int productid);
+       bool AddOrupdatereview(Review review);
+        bool DeleteReview(int productid);
+        #endregion
+
+        #region ProductPrice
+        List<showPriceForProductViewModel> ShowPriceForProduct(int productid);
+        int AddProductPrice(ProductPrice price);
+        bool UpdateProductPrice(ProductPrice price);
+        ProductPrice GetPriceById(int id);
+        bool DeleteProductPrice(ProductPrice price);
         #endregion
     }
 }

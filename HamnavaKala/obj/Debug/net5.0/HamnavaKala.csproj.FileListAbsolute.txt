@@ -335,3 +335,15 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Vi
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_DeleteCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\_updateCategory.cshtml.g.cs
 D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdateProperty.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\_DeleteProperty.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowProduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddProduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdateProduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Slider\_deleteSlider.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\_propertyforproduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddReviewforProduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowPriceForProduct.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddPrice.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\UpdatePrice.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\_deletePrice.cshtml.g.cs
+D:\Projects\pro\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\_deleteProduct.cshtml.g.cs

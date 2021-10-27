@@ -1,0 +1,75 @@
+﻿@model ProductPrice
+@{
+    ViewData["Title"] = "ویرایش قیمت برای محصول";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12" style="margin-top:100px">
+    <div class="card-box">
+        <h4 class="header-title m-t-0 m-b-30">ویرایش قیمت برای محصول</h4>
+
+        <form asp-action="UpdatePrice" method="post">
+
+            <input asp-for="ProductpriceId" hidden  />
+            <input asp-for="ProductId" hidden />
+            <input asp-for="CteateDate" hidden />
+            <div class="form-group">
+                <label asp-for="mainPrice"></label>
+                <input asp-for="mainPrice" required="" placeholder="  فیمت اصلی را وارد کنید" class="form-control">
+                <span asp-validation-for="mainPrice"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="specialprice"></label>
+                <input asp-for="specialprice" placeholder="  فیمت ویژه را وارد کنید" class="form-control">
+                <span asp-validation-for="specialprice"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="count"></label>
+                <input asp-for="count" required="" placeholder="   تعداد محصول را وارد کنید" class="form-control">
+                <span asp-validation-for="count"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="maxorderCount"></label>
+                <input asp-for="maxorderCount" type="text" required="" placeholder="   تعداد محجاز سفارش را وارد کنید" class="form-control">
+                <span asp-validation-for="maxorderCount"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="productColor">انتخاب رنگ</label>
+                <select asp-for="productColor" class="form-control" asp-items="@(new SelectList(ViewBag.color, "productColorId", "colorName"))">
+                    <option value="">انتخاب رنگ</option>
+                </select>
+                <span asp-validation-for="productColor"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="productGurantee">انتخاب گارانتی</label>
+                <select asp-for="productGurantee" class="form-control" asp-items="@(new SelectList(ViewBag.gurantee, "GuranteeId", "GuranteeName"))">
+                    <option value="">انتخاب گارانتی</option>
+                </select>
+                <span asp-validation-for="productColor"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EndDateDiscount">ختم تاریخ تخفیف</label>
+                <input asp-for="EndDateDiscount" type="date" placeholder="   ختم تاریخ تخفیف را وارد کنید" class="form-control">
+                <span asp-validation-for="EndDateDiscount"></span>
+            </div>
+
+            <div class="form-group text-right m-b-0">
+                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                    ثبت ویرایش
+                </button>
+                <a asp-action="index" class="btn btn-default waves-effect waves-light m-l-5">
+                    لغو
+                </a>
+            </div>
+
+        </form>
+    </div>
+    <!-- end col -->
+
+</div>

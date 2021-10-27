@@ -1,0 +1,156 @@
+﻿@model Review
+@{
+    ViewData["Title"] = " نمایش و افزودن نظرات محصولات";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["productid"] = TempData["productid"].ToString();
+
+    string[] positive = null;
+    string[] negative = null;
+    Review review = ViewBag.review;
+
+    if (review != null)
+    {
+        positive = review.ReviewPositive.Split("^");
+        negative = review.ReviewNegative.Split("^");
+    }
+}
+
+<div class="col-lg-12" style="margin-top:100px">
+    <div class="card-box">
+        <h4 class="header-title m-t-0 m-b-30">افزودن و نمایش توضیحات در باره محصول </h4>
+
+        <form asp-action="AddReview" method="post">
+
+            <div class="form-group">
+                <label asp-for="ReviewDescription"></label>
+                <textarea id="description" asp-for="@review.ReviewDescription" class="form-control"></textarea>
+            </div>
+
+            <hr />
+            <div class="form-group">
+                <label>نقاط قوت</label>
+                <input type="text" id="positive" class="form-control" />
+                <button class="Add-Positive btn btn-success" style="width:10%; margin-top: 1%; margin-bottom: 1%; padding: 5px; border-radius: 10px;" type="button">انتخاب</button>
+                <div class="listpositive">
+                    @if (positive != null)
+                    {
+                        foreach (var item in positive)
+                        {
+                            <div style="background: #095e97;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
+                                <label class="control-label col-md-12">  @item  </label>
+                                <input type="hidden" name="Positive" value="@item" />
+                                <a style="float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;" class="btn btn-danger remove-category">حذف</a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label>نقاط ضعف</label>
+                <input type="text" id="negative" class="form-control" />
+                <button class="Add-Negative btn btn-success" style="width:10%; margin-top: 1%; margin-bottom: 1%; padding: 5px; border-radius: 10px;" type="button">انتخاب</button>
+                <div class="listnegative">
+                    @if (negative != null)
+                    {
+                        foreach (var item in negative)
+                        {
+                            <div style="background: #c20707;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
+                                <label class="control-label col-md-12">  @item  </label>
+                                <input type="hidden" name="negative" value="  @item  " />
+                                <a style="float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;" class="btn btn-danger remove-category">حذف</a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="ArticleTitle"></label>
+                <textarea rows="2" asp-for="@review.ArticleTitle" class="form-control"></textarea>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="ArticleDescription"></label>
+                <textarea id="article" asp-for="@review.ArticleDescription" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group text-right m-b-0">
+                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                    ثبت کردن
+                </button>
+                <a asp-action="index" class="btn btn-default waves-effect waves-light m-l-5">
+                    لغو
+                </a>
+            </div>
+
+        </form>
+    </div>
+    <!-- end col -->
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $(".Add-Positive").click(function () {
+            if ($("#positive").val()) {
+                var value = $("#positive").val();
+                $(".listpositive").append(
+                    "<div style='background: #095e97;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;'>"
+                    + "<label class='control-label col-md-12'>" + value + "</label>"
+                    + "<input type='hidden' name='Positive' value='" + value + "' />"
+                    + "<a style='float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;' class='btn btn-danger remove-category'>حذف</a>"
+                    + "</div>"
+
+                );
+                $("#positive").val("");
+            }
+        });
+
+        $('.listpositive').delegate(".remove-category", 'click', function () {
+            var content = $(this).parent();
+            var text = content.find($("label")).text();
+            var value = content.find($("input[type=hidden]")).val();
+
+            content.remove();
+        });
+
+
+        //Its for negative point of products//////////////////////////////////
+        $(".Add-Negative").click(function () {
+            if ($("#negative").val()) {
+                var value = $("#negative").val();
+                $(".listnegative").append(
+                    "<div style='background: #c20707;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;'>"
+                    + "<label class='control-label col-md-12'>" + value + "</label>"
+                    + "<input type='hidden' name='negative' value='" + value + "' />"
+                    + "<a style='float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;' class='btn btn-danger remove-category'>حذف</a>"
+                    + "</div>"
+
+                );
+                $("#negative").val("");
+            }
+        });
+
+        $('.listnegative').delegate(".remove-category", 'click', function () {
+            var content = $(this).parent();
+            var text = content.find($("label")).text();
+            var value = content.find($("input[type=hidden]")).val();
+
+            content.remove();
+        });
+
+    </script>
+
+    <script src="~/AdminPanel/assets/plugins/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('description', {
+            language: 'fa'
+        });
+        CKEDITOR.replace('article', {
+            language: 'fa'
+        })
+    </script>
+}

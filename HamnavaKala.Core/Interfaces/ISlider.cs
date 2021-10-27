@@ -13,7 +13,7 @@ namespace HamnavaKala.Core.Interfaces
         Slider GetSliderById(int sliderId);
         int AddSlider(Slider slider);
         bool UpdateSlider(Slider slider);
-        bool DeleteSlider(int id);
+        bool DeleteSlider(Slider slider);
         public int SliderCount();
     }
 }
