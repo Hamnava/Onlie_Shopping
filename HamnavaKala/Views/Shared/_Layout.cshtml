@@ -14,6 +14,7 @@
     <!-- main-style---------------------------------->
     <link rel="stylesheet" href="~/Site/assets/css/main.css">
     <link rel="stylesheet" href="~/Site/assets/css/responsive.css">
+    @RenderSection("Css", false)
 </head>
 <body>
     <!-- header-------------------------------->
@@ -940,4 +941,6 @@
 <script src="~/Site/assets/js/vendor/jquery.nice-select.min.js"></script>
 <!-- main js---------------------------------------------------->
 <script src="~/Site/assets/js/main.js"></script>
+
+@RenderSection("SCript", false)
 </html>

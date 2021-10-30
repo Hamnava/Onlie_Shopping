@@ -19,11 +19,13 @@ namespace HamnavaKala.DataLayer.Entities
         [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string AnswerDescription { get; set; }
         public DateTime AnswerDate { get; set; }
-
+        public int userid { get; set; }
         public int QuestionId { get; set; }
         #region Relations
         [ForeignKey("QuestionId")]
         public Question Question { get; set; }
+        [ForeignKey("userid")]
+        public User User { get; set; }
         #endregion
     }
 }

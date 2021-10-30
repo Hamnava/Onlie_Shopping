@@ -336,10 +336,12 @@ namespace HamnavaKala.Areas.Admin.Controllers
             int sendJson = delete ? 3 : 4;
             return Json(sendJson);
         }
+
+        
         #endregion
 
         #region Review
-        public IActionResult AddReviewforProduct(int id)
+        public IActionResult AddReview(int id)
         {
             ViewBag.review = _product.Findreviewbyproduct(id);
             TempData["productid"] = id;

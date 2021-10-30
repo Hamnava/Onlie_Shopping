@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ValueViewModel>
+@{
+    Layout = null;
+}
+
+<article>
+    <h2 class="params-headline">
+        مشخصات فنی 
+        @*<span>Samsung Galaxy Note 10 Dual SIM 256GB Mobile Phone</span>*@
+    </h2>
+
+    <section>
+        <ul class="params-list">
+            @foreach (var item in Model)
+            {
+
+                <li class="params-list-item">
+                    <div class="params-list-key">
+                        <span class="block">@item.propname</span>
+                    </div>
+                    <div class="params-list-value">
+                        <span class="block">
+                            @item.value
+                        </span>
+                    </div>
+                </li>
+
+            }
+
+        </ul>
+    </section>
+
+</article>

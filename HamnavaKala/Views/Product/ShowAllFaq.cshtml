@@ -1,0 +1,94 @@
+﻿@model IEnumerable<QuestionAnswerViewModel>
+@{
+    Layout = null;
+}
+
+<div class="faq">
+    <h2 class="params-headline">
+        پرسش و پاسخ
+        <span>پرسش خود را در مورد محصول مطرح نمایید</span>
+    </h2>
+    <form action="#" class="form-faq">
+        <div class="form-faq-row mt-4">
+            <div class="form-faq-col">
+                <div class="ui-textarea">
+                    <textarea name="qa" title="متن سوال" class="ui-textarea-field"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-faq-row mt-4">
+            <div class="form-faq-col form-faq-col-submit">
+                <button class="btn-tertiary btn btn-secondary" type="submit">ثبت پرسش</button>
+                <div class="form-faq-col-agreement d-inline-block mr-5">
+                    <div class="form-auth-row">
+                        <label for="#" class="ui-checkbox mt-1">
+                            <input type="checkbox" value="1" name="login" id="remember">
+                            <span class="ui-checkbox-check"></span>
+                        </label>
+                        <label for="remember" class="remember-me mr-0">اولین پاسخی که به پرسش من داده شد، از طریق ایمیل به من اطلاع دهید. </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="product-questions-list">
+        @foreach (var item in Model.GroupBy(q => q.Questionid))
+        {
+            <div class="questions-list">
+                <ul class="faq-list">
+                    <li class="is-question">
+                        <div class="section">
+                            <div class="faq-header">
+                                <span class="icon-faq">?</span>
+                                <p class="h5">
+                                    پرسش :
+                                    <span>@item.First().usernameQ</span>
+                                </p>
+                            </div>
+                            <p>@item.First().DescriptionQ</p>
+                            <div class="faq-date">
+                                <em>@item.First().CreateQDate.ConvertDate()</em>
+                            </div>
+                            <a href="#" class="js-add-answer-btn">
+                                به این پرسش پاسخ
+                                دهید
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            @foreach (var answer in item)
+            {
+                @if (answer.showAnswer.AnswerId > 0)
+                {
+                    <div class="questions-list answer-questions">
+                        <ul class="faq-list">
+                            <li class="is-question">
+                                <div class="section">
+                                    <div class="faq-header">
+                                        <span class="icon-faq"><i class="mdi mdi-storefront"></i></span>
+                                        <p class="h5">
+                                            پاسخ فروشنده :
+                                            <span>@answer.showAnswer.usernameA</span>
+                                        </p>
+                                    </div>
+                                    <p>@answer.showAnswer.DescriptionA</p>
+                                    <div class="faq-date">
+                                        <em>@answer.showAnswer.CreateADate?.ConvertDate()</em>
+                                    </div>
+                                    <a href="#" class="js-add-answer-btn">
+                                        به این پرسش پاسخ
+                                        دهید
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            }
+
+        }
+
+
+    </div>
+</div>

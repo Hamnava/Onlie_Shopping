@@ -297,6 +297,116 @@ namespace HamnavaKala.Core.Servieces
                                                        }).ToList();
             return slider;
         }
+
+       
+
+        public List<ProductDetailsViewModel> ShowDetailsProduct(int productid)
+        {
+            List<ProductDetailsViewModel> detail = (from pr in _context.ProductPrices
+                                                        join p in _context.Products on pr.ProductId equals p.ProductId
+                                                        join g in _context.ProductGurantees on pr.productGurantee equals g.GuranteeId
+                                                        join pc in _context.ProductColors on pr.productColor equals pc.productColorId
+                                                        join c in _context.Categories on p.CategoryId equals c.CategoryId
+                                                        join b in _context.Brands on p.BrandId equals b.BrandId
+
+                                                        where (pr.ProductId == productid)
+
+                                                        select new ProductDetailsViewModel
+                                                        {
+                                                            productImg = p.ProductImage,
+                                                            productid = p.ProductId,
+                                                            productenname = p.ProductEnName,
+                                                            productfaname = p.ProductFaName,
+                                                            productStar = p.ProductStar,
+                                                            productsell = p.ProductSell,
+                                                            productTag = p.ProductTag,
+                                                            mainPrice = pr.mainPrice,
+                                                            specialPrice = pr.mainPrice > pr.specialprice && pr.EndDateDiscount >= DateTime.Now.Date ? pr.specialprice: pr.mainPrice,
+                                                            colorCode = pc.colorCode,
+                                                            colorname = pc.colorName,
+                                                            brandName = b.BrandName,
+                                                            categoryName = c.CategoryFaName,
+                                                            EndDiescount = pr.EndDateDiscount,
+                                                            guranteename = g.GuranteeName
+                                                        }).ToList();
+            return detail;
+        }
+
+        public List<ValueViewModel> showViewforProduct(int productid)
+        {
+            List<ValueViewModel> value = (from pv in _context.PropertyValues
+                                          join pp in _context.ProductProperties on pv.productpropertyid equals pp.ProductPropertyId
+                                          where (pv.ProductId == productid)
+                                          select new ValueViewModel
+                                          { 
+                                              propname = pp.ProductPropertyTitle,
+                                              value = pv.Propertvalue
+                                          }).Take(4).ToList();
+            return value;
+
+        }
+
+        public List<ValueViewModel> ShowAllPropertyforProduct(int productid)
+        {
+            List<ValueViewModel> property = (from pv in _context.PropertyValues
+                                             join pp in _context.ProductProperties on pv.productpropertyid equals pp.ProductPropertyId
+                                             where (pv.ProductId == productid)
+                                             select new ValueViewModel
+                                             {
+                                                 propname = pp.ProductPropertyTitle,
+                                                 value = pv.Propertvalue
+                                             }).ToList();
+            return property;
+        }
+
+        public List<CommentsForProductViewModel> ShowuserCommentsForProduct(int productid)
+        {
+            List<CommentsForProductViewModel> comment = (from c in _context.Comments
+                                                         join u in _context.Users on c.userId equals u.UserId
+                                                         where (c.productId == productid && c.IsActive)
+                                                         select new CommentsForProductViewModel
+                                                         {
+                                                             commentTitle = c.CommentTitle,
+                                                             CommentDescription = c.CommentDescription,
+                                                             CommentLike = c.CommentLike,
+                                                             CommentDislike = c.CommentDeslike,
+                                                             CreateCommentdate = c.CommentCreate,
+                                                             IslikeProduct = c.Recommend,
+                                                             userfullName = u.FirstName + " "+ u.LastName
+                                                         }).ToList();
+            return comment;
+
+        }
+
+        public List<QuestionAnswerViewModel> ShowallQuestionAnswer(int productid)
+        {
+            var question = _context.Questions.Where(q => q.IsActive == true && q.productId == productid);
+
+            List<QuestionAnswerViewModel> qavm = (from q in question
+                                                  join uq in _context.Users on q.userId equals uq.UserId
+
+                                                  join a in _context.Answers on q.QuestionId equals a.QuestionId into qa
+                                                  from a in qa.DefaultIfEmpty()
+
+                                                  join ua in _context.Users on a.userid equals ua.UserId into u
+                                                  from ua in u.DefaultIfEmpty()
+
+                                                  select new QuestionAnswerViewModel
+                                                  {
+                                                      Questionid = q.QuestionId,
+                                                      DescriptionQ = q.QuestionDescription,
+                                                      CreateQDate = q.QCreate,
+                                                      usernameQ = uq.FirstName + " " + uq.LastName,
+                                                      showAnswer = new AnswerViewModel
+                                                      {
+                                                          AnswerId = a.AnswerId,
+                                                          CreateADate = a.AnswerDate,
+                                                          DescriptionA = a.AnswerDescription,
+                                                          usernameA = ua.FirstName +" " + ua.LastName
+                                                      }
+                                                  }).ToList();
+            return qavm;
+        }
         #endregion
 
         #region Review

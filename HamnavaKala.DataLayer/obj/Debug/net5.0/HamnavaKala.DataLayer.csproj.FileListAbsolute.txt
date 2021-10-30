@@ -28,3 +28,18 @@ D:\Projects\pro\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKal
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\ref\HamnavaKala.DataLayer.dll
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.pdb
 D:\Projects\pro\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.genruntimeconfig.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\HamnavaKala.DataLayer.deps.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\HamnavaKala.DataLayer.runtimeconfig.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\HamnavaKala.DataLayer.runtimeconfig.dev.json
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\HamnavaKala.DataLayer.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\ref\HamnavaKala.DataLayer.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\bin\Debug\net5.0\HamnavaKala.DataLayer.pdb
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.csproj.AssemblyReference.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.AssemblyInfoInputs.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.AssemblyInfo.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.csproj.CoreCompileInputs.cache
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\ref\HamnavaKala.DataLayer.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.pdb
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.DataLayer\obj\Debug\net5.0\HamnavaKala.DataLayer.genruntimeconfig.cache

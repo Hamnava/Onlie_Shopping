@@ -1,0 +1,143 @@
+﻿@model IEnumerable<CommentsForProductViewModel>
+@{
+    Layout = null;
+}
+
+<div class="comments">
+    <h2 class="params-headline">
+        امتیاز کاربران به
+        <span>Samsung Galaxy Note 10 Dual SIM 256GB Mobile Phone</span>
+    </h2>
+    <div class="comments-summary">
+        <div class="col-lg-6 col-md-6 col-xs-12 pr">
+            <div class="comments-summary-box">
+                <ul class="comments-item-rating">
+                    <li>
+                        <span class="cell-title">کیفیت ساخت:</span>
+                        <span class="cell-value">خوب</span>
+                        <div class="rating-general">
+                            <div class="rating-value"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cell-title">ارزش خرید به نسبت قیمت:</span>
+                        <span class="cell-value">خوب</span>
+                        <div class="rating-general">
+                            <div class="rating-value"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cell-title">نوآوری:</span>
+                        <span class="cell-value">خوب</span>
+                        <div class="rating-general">
+                            <div class="rating-value" style="width: 70%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cell-title">امکانات و قابلیت ها:</span>
+                        <span class="cell-value">متوسط</span>
+                        <div class="rating-general">
+                            <div class="rating-value" style="width: 65%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cell-title">سهولت استفاده:</span>
+                        <span class="cell-value">خوب</span>
+                        <div class="rating-general">
+                            <div class="rating-value" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cell-title">طراحی و ظاهر:</span>
+                        <span class="cell-value">خوب</span>
+                        <div class="rating-general">
+                            <div class="rating-value"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 pr">
+            <div class="comments-summary-note">
+                <h6>شما هم می‌توانید در مورد این کالا نظر بدهید.</h6>
+                <p>
+                    برای ثبت نظر، لازم است ابتدا وارد حساب کاربری خود شوید. اگر این محصول را قبلا از دیجی‌کالا خریده باشید،
+                    نظر
+                    شما به عنوان مالک محصول ثبت خواهد شد.
+                </p>
+                <a href="#" class="btn-add-comment btn btn-secondary">افزودن نظر جدید</a>
+            </div>
+        </div>
+
+        <div class="product-comment-list">
+            <ul class="comment-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="col-lg-3 pr">
+                            <section>
+                                <div class="comments-user-shopping">
+                                    @item.userfullName
+                                    <div class="cell-date">
+                                        @item.CreateCommentdate.ConvertDate()
+                                    </div>
+                                    @switch (item.IslikeProduct)
+                                    {
+                                        case 1:
+                                            <div class="message-light" style="background-color:#fff9f2;color:#dd7e19;">
+                                                <i class="fa fa-thumbs-o-up">
+                                                </i>خرید این محصول را توصیه می‌کنم
+                                            </div>
+                                            break;
+                                        case 2:
+                                            <div class="message-light" style="background-color:#fff9f2;color:#dd7e19;">
+                                                <i class="fa fa-thumbs-o-up">
+                                                </i>در مورد خرید این محصول مطمین نیستم
+                                            </div>
+                                            break;
+                                        case 3:
+                                            <div class="message-light" style="background-color:#fff9f2;color:#dd7e19;">
+                                                <i class="fa fa-thumbs-o-down">
+                                                </i>خرید این محصول را توصیه نمی‌کنم
+                                            </div>
+                                            break;
+                                    }
+
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-9 pl">
+                            <div class="article">
+                                <ul class="comment-text">
+                                    <div class="header">
+                                        <div>@item.commentTitle</div>
+                                       
+                                        <p>@Html.Raw(item.CommentDescription)!</p>
+                                    </div>
+                                    <div class="comments-evaluation">
+                                      
+                                        <div class="footer">
+                                            <div class="comments-likes">
+                                                آیا این نظر برایتان مفید بود؟
+                                                <button class="btn-like js-comment-like" type="submit">
+                                                    بله
+                                                    <span class="count">@item.CommentLike</span>
+                                                </button>
+                                                <button class="btn-like js-comment-dislike" type="submit">
+                                                    خیر
+                                                    <span class="count">@item.CommentDislike</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+
+            </ul>
+        </div>
+    </div>
+</div>

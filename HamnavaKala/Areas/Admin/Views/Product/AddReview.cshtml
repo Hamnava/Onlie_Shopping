@@ -24,6 +24,7 @@
             <div class="form-group">
                 <label asp-for="ReviewDescription"></label>
                 <textarea id="description" asp-for="@review.ReviewDescription" class="form-control"></textarea>
+                <span asp-validation-for="ReviewDescription" class="text-danger"></span>
             </div>
 
             <hr />
@@ -36,10 +37,10 @@
                     {
                         foreach (var item in positive)
                         {
-                            <div style="background: #095e97;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
+                            <div style="background: #086279; height: 30px; width: 40%; border-radius: 5px; margin-bottom: 1%; margin-left: 1%; display: inline-block; color: whitesmoke;">
                                 <label class="control-label col-md-12">  @item  </label>
                                 <input type="hidden" name="Positive" value="@item" />
-                                <a style="float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;" class="btn btn-danger remove-category">حذف</a>
+                                <a style="float: left; top: -25px; position: relative; height: 100%; border-radius: 5px; background-color: #053946" class="btn remove-category">حذف</a>
                             </div>
                         }
                     }
@@ -55,10 +56,10 @@
                     {
                         foreach (var item in negative)
                         {
-                            <div style="background: #c20707;height: 30px;width: 20%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
+                            <div style="background: #c20707;height: 30px;width: 40%;border-radius: 5px;margin-bottom: 1%;margin-left: 1%;display:inline-block;color: whitesmoke;">
                                 <label class="control-label col-md-12">  @item  </label>
                                 <input type="hidden" name="negative" value="  @item  " />
-                                <a style="float:left;top:-25px;position: relative;height: 100%;border-radius: 5px;" class="btn btn-danger remove-category">حذف</a>
+                                <a style="float: left; top: -25px; position: relative; height: 100%; border-radius: 5px; background-color: #770c0c" class="btn remove-category">حذف</a>
                             </div>
                         }
                     }
@@ -68,6 +69,7 @@
             <div class="form-group">
                 <label asp-for="ArticleTitle"></label>
                 <textarea rows="2" asp-for="@review.ArticleTitle" class="form-control"></textarea>
+                <span asp-validation-for="ArticleTitle" class="text-danger"></span>
             </div>
             <hr />
             <div class="form-group">

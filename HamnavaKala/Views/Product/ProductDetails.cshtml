@@ -1,0 +1,534 @@
+﻿@model IEnumerable<ProductDetailsViewModel>
+@{
+    ViewData["Title"] = "ProductDetails";
+    List<ValueViewModel> Value = ViewBag.Property;
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/Site/assets/css/vendor/noUISlider.min.css">
+    <link rel="stylesheet" href="~/Site/assets/css/vendor/lightgallery.css">
+}
+
+
+
+<div class="container-main">
+    <div class="d-block">
+        <div class="page-content page-row">
+            <div class="main-row">
+                <div id="breadcrumb">
+                    <i class="mdi mdi-home"></i>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                            <li class="breadcrumb-item"><a href="#">@Model.First().categoryName</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">@Model.First().productfaname</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg">
+                    <div class="product type-product">
+                        <div class="col-lg-5 col-xs-12 pr d-block" style="padding: 0;">
+                            <section class="product-gallery">
+                                <div class="gallery">
+                                    <div class="gallery-item">
+                                        <div>
+                                            <ul class="gallery-actions">
+                                                <li>
+                                                    <a href="#" class="btn-option add-product-wishes">
+                                                        <i class="mdi mdi-heart-outline"></i>
+                                                        <span>محبوب</span>
+                                                    </a>
+                                                </li>
+                                                <li class="option-social">
+                                                    <a href="#" class="btn-option btn-option-social" data-toggle="modal" data-target="#option-social">
+                                                        <i class="mdi mdi-share"></i>
+                                                        <span>اشتراک</span>
+                                                    </a>
+                                                    <!-- Modal-option-social -->
+                                                    <div class="modal fade" id="option-social" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">اشتراک گذاری</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="title">با استفاده از روش‌های زیر می‌توانید این صفحه را با دوستان خود به اشتراک بگذارید.</div>
+                                                                    <form action="#" class="email-sharing">
+                                                                        <h5 class="share-title">ارسال از طریق ایمیل</h5>
+                                                                        <div class="input-group-sharing">
+                                                                            <input type="email" class="share-email-address form-control" id="share-email">
+                                                                            <button class="btn-send-email btn btn-primary" type="submit">ارسال ایمیل</button>
+                                                                        </div>
+                                                                    </form>
+                                                                    <div class="share-options">
+                                                                        <div class="share-social-buttons text-center">
+                                                                            <a href="#" class="share-social share-social-twitter">
+                                                                                <i class="mdi mdi-twitter"></i>
+                                                                            </a>
+                                                                            <a href="#" class="share-social share-social-facebook">
+                                                                                <i class="mdi mdi-facebook"></i>
+                                                                            </a>
+                                                                            <a href="#" class="share-social share-social-whatsapp">
+                                                                                <i class="mdi mdi-whatsapp"></i>
+                                                                            </a>
+                                                                            <a href="#" class="share-social share-social-email-outline">
+                                                                                <i class="mdi mdi-email-outline"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-share-col">
+                                                                        <input class="ui-url-field" type="url" value="https://www.digikala.com/product/dkp-1672478" readonly="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="option-alarm">
+                                                    <a href="#" class="btn-option btn-option-alarm" data-toggle="modal" data-target="#btn-option-alarm">
+                                                        <i class="mdi mdi-bell-outline"></i>
+                                                        <span>اطلاع‌رسانی</span>
+                                                    </a>
+                                                    <!-- Modal-option-alarm -->
+                                                    <div class="modal fade" id="btn-option-alarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">به من اطلاع بده</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="form-notification-title">از طریق:</div>
+                                                                    <div class="form-auth-row">
+                                                                        <label for="#" class="ui-checkbox mt-1">
+                                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                                            <span class="ui-checkbox-check"></span>
+                                                                        </label>
+                                                                        <label for="remember" class="remember-me mr-0">ایمیل به info@digismart.com</label>
+                                                                    </div>
+                                                                    <div class="form-auth-row">
+                                                                        <label for="#" class="ui-checkbox mt-1">
+                                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                                            <span class="ui-checkbox-check"></span>
+                                                                        </label>
+                                                                        <label for="remember" class="remember-me mr-0">پیامک به *******0991</label>
+                                                                    </div>
+                                                                    <div class="form-auth-row">
+                                                                        <label for="#" class="ui-checkbox mt-1">
+                                                                            <input type="checkbox" value="1" name="login" id="remember">
+                                                                            <span class="ui-checkbox-check"></span>
+                                                                        </label>
+                                                                        <label for="remember" class="remember-me mr-0">سیستم پیام شخصی دیجی اسمارت</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-primary ml-2">ثبت</button>
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">بازگشت</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="Three-dimensional">
+                                                    <a href="#" class="btn-option btn-Three-dimensional" data-toggle="modal" data-target="#more-product">
+                                                        <i class="mdi mdi-more"></i>
+                                                        <span>نمایش بیشتر</span>
+                                                    </a>
+                                                    <div class="modal fade" id="more-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered more-product" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <div id="custom-events">
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-6.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-6.jpg" />
+                                                                        </a>
+                                                                        <a href="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-7.jpg">
+                                                                            <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-7.jpg" />
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="Three-dimensional">
+                                                    <a href="product-comparison.html" class="btn-option btn-compare">
+                                                        <i class="mdi mdi-compare"></i>
+                                                        <span>مقایسه</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <div class="gallery-img">
+                                            <a href="#">
+                                                <img class="zoom-img" id="img-product-zoom" src="~/Site/assets/images/slider-product/@Model.First().productImg"
+                                                     data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10.jpg" width="411" />
+                                                <div id="gallery_01f" style="width:420px;float:right;">
+                                            </a>
+                                            <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
+                                                <li class="item">
+                                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg"
+                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg">
+                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg" width="100" />
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#" class="elevatezoom-gallery active" data-update=""
+                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg"
+                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg">
+                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg" width="100" />
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#" class="elevatezoom-gallery"
+                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg"
+                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg">
+                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg" width="100" />
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#" class="elevatezoom-gallery"
+                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg"
+                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg">
+                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg" width="100" />
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="#" class="elevatezoom-gallery"
+                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg"
+                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg">
+                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg" width="100" />
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-7 col-xs-12 pl mt-5 d-block">
+                        <section class="product-info">
+                            <div class="product-headline">
+                                <h1 class="product-title">
+                                    @Model.First().productfaname
+                                </h1>
+                                <div class="product-guaranteed text-success">
+                                    @Model.First().productsell
+                                    <span>فروش موفق</span>
+                                </div>
+                            </div>
+                            <div class="product-attributes">
+                                <div class="product-config">
+                                    <span class="product-title-en">@Model.First().productenname</span>
+                                    <div class="product-rate">
+                                        @for (int i = 1; i <= Model.First().productStar; i++)
+                                        {
+
+                                            <i class="fa fa-star active"></i>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-config-wrapper">
+                                <div class="product-directory">
+                                    <ul>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-archive"></i> دسته:
+                                            </span>
+                                            <a href="#" class="product-link product-cat-title">@Model.First().categoryName</a>
+                                           
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <i class="fa fa-tags"></i> برچسب:
+                                            </span>
+                                            <a href="#" class="product-link product-tag-title">@Model.First().productTag</a>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                برند:
+                                            </span>
+                                            <a href="#" class="product-link product-tag-title">@Model.First().brandName</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                    <div class="product-variants">
+                                        <span>رنگ بندی: </span>
+                                        <ul class="js-product-variants">
+                                            @{
+                                                int check = 0;
+                                            }
+                                            @foreach (var item in Model.GroupBy(c => c.colorCode))
+                                            {
+                                                <li class="ui-variant Code" data-code="@item.Key">
+                                                    <label for="#" class="ui-variant-color">
+                                                        <span class="ui-variant-shape" style="background-color: @item.First().colorCode"></span>
+                                                        <input type="radio" value="4" name="color" id="variant" class="js-variant-selector" @(check == 0? "checked" : "")>
+                                                        <span class="ui-variant-check"></span>
+                                                    </label>
+                                                </li>
+                                                check++;
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                    <div class="product-params pt-3">
+                                        <ul data-title="ویژگی‌های محصول">
+                                            @foreach (var item in Value)
+                                            {
+                                                <li>
+                                                    <span>@item.propname: </span>
+                                                    <span>@item.value</span>
+                                                </li>
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                    <div class="product-price-survey-question">
+                                        آیا قیمت مناسب‌تری سراغ دارید؟
+                                        <div class="answers">
+                                            <a href="#" class="product-price-survery-answer price-yes btn btn-secondary">بلی</a>
+                                            <a href="#" class="product-price-survery-answer price-no btn btn-secondary">خیر</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col=lg-6 col-md-6 col-xs-12 pr">
+                                    <div class="product-seller-info">
+                                        <div class="seller-info-changable">
+                                            <div class="product-seller-row vendor">
+                                                <span class="title"> فروشنده:</span>
+                                                <a href="#" class="product-name">دیجی اسمارت</a>
+                                            </div>
+                                            <div class="product-seller-row guarantee">
+                                                <span class="title"> گارانتی:</span>
+                                                <a href="#" class="product-name gurantee"></a>
+                                            </div>
+                                            <div class="product-seller-row price">
+                                                <span class="title"> قیمت:</span>
+                                                <a href="#" class="product-name">
+                                                    <span class="amount specialprice">
+                                                       
+                                                    </span>
+                                                        <span>افغانی</span>
+                                                </a>
+
+                                                <a href="#" class="product-name">
+                                                    <del class="amount Mainprice">
+                                                        
+                                                        
+                                                    </del>
+                                                </a>
+                                            </div>
+                                            <div class="product-seller-row guarantee">
+                                                <span class="title mt-3"> تعداد:</span>
+                                                <div class="quantity pl">
+                                                    <input type="number" min="1" max="100" step="1" value="1"><div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>
+                                                </div>
+                                            </div>
+                                            <div class="product-seller-row add-to-cart">
+                                                <a href="#" class="btn-add-to-cart btn btn-primary">
+                                                    <span class="btn-add-to-cart-txt">افزودن به سبد خرید</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="product-usp">
+                        <div class="product-feature">
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/Site/assets/images/page-single-product/delivery.svg">
+                                    امکان تحویل
+                                    <br>
+                                    اکسپرس
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/Site/assets/images/page-single-product/contact-us.svg">
+                                    ۷ روز هفته
+                                    <br>
+                                    ۲۴ ساعته
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/Site/assets/images/page-single-product/payment-terms.svg">
+                                    امکان
+                                    <br>
+                                    پرداخت در محل
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/Site/assets/images/page-single-product/return-policy.svg">
+                                    هفت روز ضمانت بازگشت کالا
+                                </a>
+                            </div>
+                            <div class="product-feature-col">
+                                <a href="#" class="product-feature-item">
+                                    <img src="~/Site/assets/images/page-single-product/origin-guarantee.svg">
+                                    ضمانت
+                                    <br>
+                                    اصل بودن کالا
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab-box">
+                <ul class="tab nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Review-tab" data-toggle="tab" href="#Review" role="tab" aria-controls="Review" aria-selected="true">
+                            <i class="mdi mdi-glasses"></i>
+                            نقد و بررسی
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Specifications-tab" data-toggle="tab" href="#Specifications" role="tab" aria-controls="Specifications" aria-selected="false">
+                            <i class="mdi mdi-format-list-checks"></i>
+                            مشخصات
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="User-comments-tab" data-toggle="tab" href="#User-comments" role="tab" aria-controls="User-comments" aria-selected="false">
+                            <i class="mdi mdi-comment-text-multiple-outline"></i>
+                            نظرات کاربران
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="question-and-answer-tab" data-toggle="tab" href="#question-and-answer" role="tab" aria-controls="question-and-answer" aria-selected="false">
+                            <i class="mdi mdi-comment-question-outline"></i>
+                            پرسش و پاسخ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg">
+                <div class="tabs-content">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="Review" role="tabpanel" aria-labelledby="Review-tab">
+                            
+                            
+                        </div>
+                        <div class="tab-pane fade" id="Specifications" role="tabpanel" aria-labelledby="Specifications-tab">
+                           
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="User-comments" role="tabpanel" aria-labelledby="User-comments-tab">
+                           
+
+
+                        </div>
+                        <div class="tab-pane fade" id="question-and-answer" role="tabpanel" aria-labelledby="question-and-answer-tab">
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section SCript{
+    <script src="~/Site/assets/js/vendor/lightgallery-all.js"></script>
+    <script src="~/Site/assets/js/vendor/jquery.ez-plus.js"></script>
+<script>
+    var price = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+
+    function Getprice(Code) {
+        var temp = [];
+
+        $.each(price, function (index, item) {
+            if (item.colorCode == Code) {
+                temp.push(item);
+            }
+        });
+        return temp;
+    }
+
+    $('.Code').click(function () {
+        var Code = $(this).data('code');
+        var Listprice = Getprice(Code);
+        UpdatePrice(Listprice[0]);
+    });
+    $(".Code").first().click();
+    function UpdatePrice(Listprice) {
+        $(".gurantee").html(Listprice.guranteename);
+
+        if (Listprice.mainPrice > Listprice.specialPrice) {
+            $(".Mainprice").show();
+            $(".Mainprice").html(Listprice.mainPrice);
+            $(".specialprice").html(Listprice.specialPrice);
+        }
+        else {
+            $(".Mainprice").hide();
+            $(".specialprice").html(Listprice.mainPrice);
+        }
+    }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#Review").load("/product/ShowReview/" + @Model.First().productid);
+    });
+
+    $("#Specifications-tab").click(function () {
+        $("#Specifications").load("/product/ShowAllProperty/" + @Model.First().productid);
+    });
+
+    $("#User-comments-tab").click(function () {
+        $("#User-comments").load("/product/ShowCommentsForProduct/" + @Model.First().productid);
+    });
+
+    $("#question-and-answer-tab").click(function () {
+        $("#question-and-answer").load("/product/ShowAllFaq/" + @Model.First().productid);
+    });
+    
+</script>
+}
+

@@ -37,9 +37,14 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.Property<int>("QuestionId")
                         .HasColumnType("int");
 
+                    b.Property<int>("userid")
+                        .HasColumnType("int");
+
                     b.HasKey("AnswerId");
 
                     b.HasIndex("QuestionId");
+
+                    b.HasIndex("userid");
 
                     b.ToTable("Answers");
                 });
@@ -421,15 +426,14 @@ namespace HamnavaKala.DataLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ArticleTitle")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("ReviewDescription")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReviewNegative")
                         .HasMaxLength(1000)
@@ -514,7 +518,15 @@ namespace HamnavaKala.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("HamnavaKala.DataLayer.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("userid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Question");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Category", b =>

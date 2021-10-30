@@ -1,0 +1,95 @@
+﻿@model Review
+@{
+    Layout = null;
+}
+
+
+<h2 class="params-headline">نقد و بررسی اجمالی</h2>
+@if (Model != null)
+{
+    <section class="content-expert-summary">
+        <div class="mask pm-3">
+            <div class="mask-text">
+                <p>@Html.Raw(Model.ReviewDescription)</p>
+            </div>
+            <a href="#" class="mask-handler">
+                <span class="show-more">+ ادامه مطلب</span>
+                <span class="show-less">- بستن</span>
+            </a>
+            <div class="shadow-box"></div>
+        </div>
+    </section>
+    <section class="content-expert-stats">
+        <div class="content-expert-evaluation">
+            <div class="col-lg-4 col-md-4 col-xs-12 d-inline-block pr">
+                <div class="positive">
+                    <span class="plus">نقاط قوت</span>
+                    <ul>
+                        @foreach (var item in Model.ReviewPositive.Split("^"))
+                        {
+                            if (item.Trim() != "")
+                            {
+                                <li>
+                                    <i class="fa fa-plus-circle"></i>
+                                    @item
+                                </li>
+                            }
+
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12 d-inline-block pr">
+                <div class="negative">
+                    <span class="neg">نقاط قوت</span>
+                    <ul>
+                        @foreach (var item in Model.ReviewNegative.Split("^"))
+                        {
+                            if (item.Trim() != "")
+                            {
+                                <li>
+                                    <i class="fa fa-minus-circle"></i>
+                                    @item
+                                </li>
+                            }
+
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    int skip = 0;
+
+    <div class="content-expert-articles">
+        @foreach (var item in Model.ArticleTitle.Split("^"))
+        {
+            <section class="content-expert-article">
+                @if (item.Trim() != "")
+                {
+                    <button class="content-expert-button">
+                        <span class="show-more"><i class="mdi mdi-plus"></i></span>
+                        <span class="show-less"><i class="mdi mdi-minus"></i></span>
+                    </button>
+                    <h3 class="content-expert-title">@item</h3>
+                }
+
+                <div class="content-expert-text">
+                    @foreach (var desc in Model.ArticleDescription.Split("^").Skip(skip).Take(1))
+                    {
+                        <p style="text-align:right">@Html.Raw(desc) </p>
+                    }
+
+                </div>
+            </section>
+            skip++;
+        }
+
+    </div>
+}
+
+<script src="~/Site/assets/js/main.js"></script>

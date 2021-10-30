@@ -14,7 +14,6 @@ namespace HamnavaKala.DataLayer.Entities
         public int ReviewId { get; set; }
 
         [Display(Name = "توضیحات محصول ")]
-        [MaxLength(1000, ErrorMessage = "{0} نمیتواند بیشتر از {1} باشد.")]
         public string ReviewDescription { get; set; }
 
         [Display(Name = "نقات ضعف ")]
@@ -26,7 +25,7 @@ namespace HamnavaKala.DataLayer.Entities
         public string ReviewPositive { get; set; }
 
         [Display(Name = "عنوان مقاله ")]
-        [MaxLength(1000, ErrorMessage = "{0} نمیتواند بیشتر از {1} باشد.")]
+        [MaxLength(2000, ErrorMessage = "{0} نمیتواند بیشتر از {1} باشد.")]
         public string ArticleTitle { get; set; }
 
         [Display(Name = "توضیحات مقاله ")]

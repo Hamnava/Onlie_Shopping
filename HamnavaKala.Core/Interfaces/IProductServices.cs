@@ -41,6 +41,11 @@ namespace HamnavaKala.Core.Interfaces
         List<PropertyValue> showpropertyValue(int productid);
         List<SliderForCategoryViewModel> ShowSliderForCategory(int categoryid);
         List<specialproductViewModel> ShowallSpecialPrice();
+        List<ProductDetailsViewModel> ShowDetailsProduct(int productid);
+        List<ValueViewModel> showViewforProduct(int productid);
+        List<ValueViewModel> ShowAllPropertyforProduct(int productid);
+        List<CommentsForProductViewModel> ShowuserCommentsForProduct(int productid);
+        List<QuestionAnswerViewModel> ShowallQuestionAnswer(int productid);
         #endregion
 
         #region Review
