@@ -337,7 +337,45 @@ namespace HamnavaKala.Areas.Admin.Controllers
             return Json(sendJson);
         }
 
-        
+
+        #endregion
+
+        #region ProductGallery
+        public IActionResult AddGallery(int id)
+        {
+            ViewBag.productid = id;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddGallery(ProductGallery gallery, IFormFile file)
+        {
+            string imgname = uploadImg.CreateImg(file, "P_Gallery");
+            gallery.Imgname = imgname;
+            if (!ModelState.IsValid)
+            {
+                return View(gallery);
+            }
+            if (file == null)
+            {
+                ModelState.AddModelError("Imgname", "لطفا یک عکس برای محصول انتخاب نمایید");
+                return View(gallery);
+            }
+            
+            if (imgname == "flase")
+            {
+                TempData["Result"] = "false";
+                return RedirectToAction(nameof(ShowProduct));
+            }
+            _product.addGallery(gallery);
+            return RedirectToAction(nameof(AddGallery));
+        }
+
+        [HttpGet]
+        public IActionResult ShowGallery(int id)
+        {
+            List<ProductGallery> gallery = _product.ShowGallery(id);
+            return View(gallery);
+        }
         #endregion
 
         #region Review

@@ -543,3 +543,5 @@ D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debu
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Product\ShowAllProperty.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Product\ShowCommentsForProduct.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Product\ShowAllFaq.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddGallery.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowGallery.cshtml.g.cs

@@ -409,6 +409,38 @@ namespace HamnavaKala.Core.Servieces
         }
         #endregion
 
+        #region ProductGallery
+       public void addGallery(ProductGallery gallery)
+        {
+            try
+            {
+                _context.ProductGalleries.Add(gallery);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public ProductGallery GetGalleryById(int id)
+        {
+            return _context.ProductGalleries.Find(id);
+        }
+        public void DeleteGallery(int id)
+        {
+            var gallery = GetGalleryById(id);
+            _context.ProductGalleries.Remove(gallery);
+            _context.SaveChanges();
+        }
+
+        public List<ProductGallery> ShowGallery(int productid)
+        {
+            return _context.ProductGalleries.Where(g => g.ProductId == productid).ToList();
+        }
+        #endregion
+
         #region Review
         public Review Findreviewbyproduct(int productid)
         {

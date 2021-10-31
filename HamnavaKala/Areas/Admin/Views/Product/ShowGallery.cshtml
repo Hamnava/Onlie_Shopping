@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProductGallery>
+@{
+    
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <img src="~/Site/assets/images/P_Gallery/@item.Imgname" style="margin:auto" class="img-responsive"/>
+    </div>
+}

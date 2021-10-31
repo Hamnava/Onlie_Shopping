@@ -13,7 +13,6 @@ namespace HamnavaKala.DataLayer.Entities
         [Key]
         public int ProductGalleryId { get; set; }
         [Display(Name = " تصویر محصول")]
-        [Required(ErrorMessage = "{0} نمیتواند خالی باشد.")]
         public string Imgname { get; set; }
 
         public int ProductId { get; set; }

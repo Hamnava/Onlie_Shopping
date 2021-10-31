@@ -48,6 +48,13 @@ namespace HamnavaKala.Core.Interfaces
         List<QuestionAnswerViewModel> ShowallQuestionAnswer(int productid);
         #endregion
 
+        #region ProductGallery
+        ProductGallery GetGalleryById(int id);
+        void addGallery(ProductGallery gallery);
+        void DeleteGallery(int id);
+        List<ProductGallery> ShowGallery(int productid);
+        #endregion
+
         #region Review
         Review Findreviewbyproduct(int productid);
        bool AddOrupdatereview(Review review);

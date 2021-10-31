@@ -188,45 +188,22 @@
                                         <div class="gallery-img">
                                             <a href="#">
                                                 <img class="zoom-img" id="img-product-zoom" src="~/Site/assets/images/slider-product/@Model.First().productImg"
-                                                     data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10.jpg" width="411" />
+                                                     data-zoom-image="~/Site/assets/images/P_Gallery/product-img-note10.jpg" width="411" />
                                                 <div id="gallery_01f" style="width:420px;float:right;">
                                             </a>
                                             <ul class="gallery-items owl-carousel owl-theme" id="gallery-slider">
-                                                <li class="item">
-                                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg"
-                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg">
-                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-1.jpg" width="100" />
-                                                    </a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" class="elevatezoom-gallery active" data-update=""
-                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg"
-                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg">
-                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-2.jpg" width="100" />
-                                                    </a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" class="elevatezoom-gallery"
-                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg"
-                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg">
-                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-3.jpg" width="100" />
-                                                    </a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" class="elevatezoom-gallery"
-                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg"
-                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg">
-                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-4.jpg" width="100" />
-                                                    </a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" class="elevatezoom-gallery"
-                                                       data-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg"
-                                                       data-zoom-image="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg">
-                                                        <img src="~/Site/assets/images/page-single-product/product-img/product-img-note10-big-5.jpg" width="100" />
-                                                    </a>
-                                                </li>
+                                                @foreach (var item in ViewBag.Gallery as List<ProductGallery>)
+                                                {
+                                                    <li class="item">
+                                                        <a href="#" class="elevatezoom-gallery active" data-update=""
+                                                           data-image="~/Site/assets/images/P_Gallery/@item.Imgname"
+                                                           data-zoom-image="~/Site/assets/images/P_Gallery/@item.Imgname">
+                                                            <img src="~/Site/assets/images/P_Gallery/@item.Imgname" width="100" />
+                                                        </a>
+                                                    </li>
+                                                }
+
+
                                             </ul>
                                         </div>
                                     </div>

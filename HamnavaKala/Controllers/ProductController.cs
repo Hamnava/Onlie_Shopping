@@ -18,6 +18,7 @@ namespace HamnavaKala.Controllers
         {
             var d = _product.ShowDetailsProduct(id);
             ViewBag.Property = _product.showViewforProduct(id);
+            ViewBag.Gallery = _product.ShowGallery(id);
             return View(d);
         }
 
