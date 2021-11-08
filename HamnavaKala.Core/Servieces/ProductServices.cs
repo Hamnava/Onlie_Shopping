@@ -441,6 +441,75 @@ namespace HamnavaKala.Core.Servieces
         }
         #endregion
 
+        #region PropertyCompare
+
+        public List<comapreviewmodel> Showcompareproduct(List<int?> productid)
+        {
+            var compare = (from p in _context.Products.Where(p => productid.Contains(p.ProductId))
+                           join pr in _context.ProductPrices on p.ProductId equals pr.ProductId into pp
+                           from pr in pp.DefaultIfEmpty()
+
+                           select new comapreviewmodel
+                           {
+                               categoryid = p.CategoryId,
+                               productfatitle = p.ProductFaName,
+                               productid = p.ProductId,
+                               productimg = p.ProductImage,
+                               productprice = pr.mainPrice,
+                               Compareviewmodel = (from pn in _context.ProductProperties
+                                                   join pv in _context.PropertyValues on pn.ProductPropertyId equals pv.productpropertyid
+                                                   where (pv.ProductId == p.ProductId)
+                                                   select new Propertyproductcompare
+                                                   {
+                                                       productid = p.ProductId,
+                                                       propertyname = pn.ProductPropertyTitle,
+                                                       propertynameid = pn.ProductPropertyId,
+                                                       propertyvalue = pv.Propertvalue,
+
+                                                   }).ToList()
+
+
+                           }).ToList();
+            return compare;
+        }
+
+        public List<Propertyproductcompare> ShowPropertyCompare(int categoryid)
+        {
+            var compare = (from pg in _context.ProductProperty_Categories
+                           join pn in _context.ProductProperties on pg.ProductPropertyId equals pn.ProductPropertyId
+                           join pv in _context.PropertyValues on pn.ProductPropertyId equals pv.productpropertyid
+
+                           where (pg.CategroyId == categoryid)
+
+                           select new Propertyproductcompare
+                           {
+                               productid = pv.ProductId,
+                               propertyname = pn.ProductPropertyTitle,
+                               propertynameid = pn.ProductPropertyId,
+                               propertyvalue = pv.Propertvalue,
+
+
+                           }).ToList();
+            return compare;
+        }
+
+        public List<GetProductForCompare> GetProductForCompare(int ctagoryid, List<int?> productid)
+        {
+            var product = (from p in _context.Products
+                           join c in _context.Categories on p.CategoryId equals c.CategoryId
+                           where (p.CategoryId == ctagoryid && !productid.Contains(p.ProductId))
+
+                           select new GetProductForCompare
+                           {
+                               Categoryid = c.CategoryId,
+                               productfatitle = p.ProductFaName,
+                               productid = p.ProductId,
+
+                           }).ToList();
+            return product;
+        }
+        #endregion
+
         #region Review
         public Review Findreviewbyproduct(int productid)
         {

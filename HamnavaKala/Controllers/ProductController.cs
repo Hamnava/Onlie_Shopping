@@ -1,4 +1,5 @@
 ﻿using HamnavaKala.Core.Interfaces;
+using HamnavaKala.Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,34 @@ namespace HamnavaKala.Controllers
         public IActionResult ShowAllFaq(int id)
         {
             return View(_product.ShowallQuestionAnswer(id));
+        }
+
+        [Route("compare/{id?}/{id2?}/{id3?}")]
+        public IActionResult Compare(int id, int? id2, int? id3)
+        {
+            List<int?> Listid = new List<int?> { id, id2, id3 };
+
+            if (id <= 0 )
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            var ListProduct = _product.Showcompareproduct(Listid);
+
+            var productgroup = ListProduct.GroupBy(p => p.productid).Select(p => new comapreviewmodel
+            {
+                categoryid = p.FirstOrDefault().categoryid,
+                productfatitle = p.FirstOrDefault().productfatitle,
+                productid = p.Key,
+                productimg = p.FirstOrDefault().productimg,
+                productprice = p.FirstOrDefault().productprice,
+                Compareviewmodel = p.FirstOrDefault().Compareviewmodel,
+
+            }).ToList();
+
+            ViewBag.property = _product.ShowPropertyCompare(productgroup[0].categoryid);
+            ViewBag.Product = _product.GetProductForCompare(productgroup[0].categoryid, Listid);
+            return View(productgroup.OrderBy(p => p.productid));
+
         }
     }
 }

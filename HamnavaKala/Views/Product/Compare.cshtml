@@ -1,0 +1,153 @@
+﻿@model IEnumerable<comapreviewmodel>
+@{
+    ViewData["Title"] = "Compare";
+    List<Propertyproductcompare> property = ViewBag.property;
+}
+
+<main class="main-row mb-4">
+    <div class="container-main">
+        <div class="col-12">
+            <div id="breadcrumb">
+                <i class="mdi mdi-home"></i>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                        <li class="breadcrumb-item"><a href="#">کالای دیجیتال</a></li>
+                        <li class="breadcrumb-item active open" aria-current="page">موبایل</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="comparison">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td class="align-middle">
+                                <div class="form-ui">
+                                    <div class="custom-select-ui">
+                                        @if (Model.Count() < 3)
+                                        {
+                                            <select class="right form-control select">
+                                                <option value="">انتخاب کنید</option>
+                                                @foreach (var item in ViewBag.Product as List<GetProductForCompare>)
+                                                {
+                                                    <option data-value="@item.productid"> @item.productfatitle</option>
+                                                }
+                                            </select>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="form-auth-row pr">
+                                    <label for="#" class="ui-checkbox mt-1">
+                                        <input type="checkbox" value="1" name="login" id="remember">
+                                        <span class="ui-checkbox-check"></span>
+                                    </label>
+                                    <label for="remember" class="remember-me mr-0">فقط تفاوت را نشان بده</label>
+                                </div>
+                            </td>
+                            @foreach (var item in Model)
+                            {
+                                <td class="ProductCompare" data-productid="@item.productid">
+                                    <div class="comparison-item">
+                                        <span class="remove-item">
+                                            <i class="mdi mdi-close" data-productid="@item.productid"></i>
+                                        </span>
+                                        <a class="comparison-item-thumb" href="#">
+                                            <img src="/Site/assets/images/slider-product/@item.productimg" alt="Samsung-S10Plus">
+                                        </a>
+                                        <a class="comparison-item-title" href="#"> @item.productfatitle</a>
+                                        <span class="amount">
+                                            @if (item.productprice <= 0 || item.productprice == null)
+                                            {
+                                                <span>یافت نشد</span>
+                                            }
+                                            else
+                                            {
+                                                @item.productprice
+                                                <span> افغانی </span>
+                                            }
+
+
+                                        </span>
+                                    </div>
+                                </td>
+                            }
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in property.GroupBy(p => p.propertyname))
+                        {
+                            <tr class="bg-cs-table-tr">
+                                <th class="text-uppercase">@item.Key</th>
+                                <td class=""><span class="text-medium"></span></td>
+                                <td class=""><span class="text-medium"></span></td>
+                                <td class=""><span class="text-medium"></span></td>
+                            </tr>
+                            int colspan = 0;
+                            <tr>
+                                <td></td>
+                                @foreach (var item2 in Model.OrderBy(f => f.productid))
+                                {
+                                    var properyvalue = property.Where(p => p.productid == item2.productid).ToList();
+                                    colspan++;
+                                    @for (int i = 0; i < properyvalue.Count; i++)
+                                    {
+                                        if (properyvalue[i].propertynameid == item.First().propertynameid)
+                                        {
+                                            <th style="padding-left:8%;" class="text-left" colspan="@colspan">@properyvalue[i].propertyvalue  </th>
+                                            colspan = 0;
+                                        }
+
+                                    }
+
+                                }
+
+
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section SCript{
+    <script>
+        $(document).ready(function () {
+
+            var ListProductid = [];
+            $('.ProductCompare').each(function () {
+                ListProductid.push($(this).data('productid'))
+            });
+
+
+            $(".option").click(function () {
+                var id = $(this).data('value');
+
+                window.location.href = '/compare/' + ListProductid.join("/") + "/" + id;
+            });
+            //$('.select').change(function () {
+
+            //    var id = $(this).children("option:selected").data('value');
+            //    window.location.href = '/compare/' + ListProductid.join("/") + "/" + id;
+            //});
+
+
+            $('.mdi-close').click(function () {
+                var id = $(this).data('productid');
+                ListProductid = $.grep(ListProductid, function (value) {
+                    return value != id
+                });
+
+                window.location.href = '/compare/' + ListProductid.join('/');
+            });
+
+        });
+    </script>
+}

@@ -55,6 +55,12 @@ namespace HamnavaKala.Core.Interfaces
         List<ProductGallery> ShowGallery(int productid);
         #endregion
 
+        #region CompareProduct
+        List<comapreviewmodel> Showcompareproduct(List<int?> productid);
+        List<Propertyproductcompare> ShowPropertyCompare(int categoryid);
+        List<GetProductForCompare> GetProductForCompare(int ctagoryid, List<int?> productid);
+        #endregion
+
         #region Review
         Review Findreviewbyproduct(int productid);
        bool AddOrupdatereview(Review review);
