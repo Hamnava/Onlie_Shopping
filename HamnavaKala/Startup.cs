@@ -52,6 +52,7 @@ namespace HamnavaKala
             services.AddTransient<IBrand, BrandService>();
             services.AddTransient<IUserservice, Userservice>();
             services.AddTransient<IViewRenderService, RenderViewToString>();
+            services.AddTransient<IAddressService, AddressService>();
 
             #endregion
         }

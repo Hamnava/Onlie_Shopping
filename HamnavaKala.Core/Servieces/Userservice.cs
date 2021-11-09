@@ -1,4 +1,5 @@
 ﻿using HamnavaKala.Core.Interfaces;
+using HamnavaKala.Core.ViewModels;
 using HamnavaKala.DataLayer.Context;
 using HamnavaKala.DataLayer.Entities;
 using System;
@@ -78,5 +79,111 @@ namespace HamnavaKala.Core.Servieces
                 return false;
             }
         }
+
+
+        public informationAccountViewmodel informationAccount(int userid)
+        {
+            return _context.Users.Where(x => x.UserId == userid).Select(x => new informationAccountViewmodel
+            {
+
+                DateTime = x.CreateDate,
+                email = x.Email,
+                userid = x.UserId,
+                phone = x.Phone,
+                userfamily = x.LastName,
+                username = x.FirstName,
+
+            }).FirstOrDefault();
+        }
+
+        //public edituserViewmodel finduserbuyeid(int userid)
+        //{
+        //    return _context.users.Where(x => x.userid == userid)
+        //        .Select(x => new edituserViewmodel
+        //        {
+        //            email = x.email,
+        //            phone = x.phone,
+        //            userfamily = x.userfamily,
+        //            username = x.username
+
+        //        }).FirstOrDefault();
+        //}
+        //public user findEditUserbuyeid(int userid)
+        //{
+        //    return _context.users.Find(userid);
+
+        //}
+
+        //public List<showfavoirateViewmodel> showfavoirateUser(int userid)
+        //{
+        //    return (from f in _context.Faviorates
+        //            join u in _context.users on f.userid equals u.userid
+        //            join p in _context.products on f.productid equals p.productid
+        //            where (f.userid == userid)
+        //            select new showfavoirateViewmodel
+        //            {
+        //                productfatitle = p.productFaTitle,
+        //                productid = p.productid,
+        //                productimage = p.Productimage,
+        //                productstar = p.producStart,
+
+        //                productprice = _context.ProductPrices.Where(x => x.count > 0
+        //                  && x.productid == p.productid)
+        //                .OrderBy(x => x.mainprice).Select(x => x.mainprice).FirstOrDefault(),
+
+        //            }).ToList();
+
+        //}
+
+        //public List<showorderForUser> showorderForUsers(int userid)
+        //{
+        //    return _context.cart.Where(x => x.userid == userid).Select(x => new showorderForUser
+        //    {
+        //        cartid = x.cartid,
+        //        createdate = x.CreateDate.MilatiToShamsi(),
+        //        ispaye = x.ispay,
+        //        totalprice = x.TotalPrice,
+
+        //    }).ToList();
+
+        //}
+
+
+        //public List<mycommentViewmodel> mycomment(int userid)
+        //{
+        //    return (from c in _context.comments
+        //            join p in _context.products on c.productid equals p.productid
+        //            where (c.userid == userid)
+        //            select new mycommentViewmodel
+        //            {
+        //                commenttitle = c.commentTitle,
+        //                isactive = c.IsActive,
+        //                productFaTitle = p.productFaTitle,
+        //                productid = p.productid,
+        //                productstar = p.producStart,
+        //                productimage = p.Productimage,
+        //            }).ToList();
+
+
+        //}
+
+        //public List<ShowDetailorder> showDetailorders(int orderid)
+        //{
+        //    var b = (from cd in _context.CartDetail
+        //             join c in _context.cart on cd.Cartid equals c.cartid
+        //             join p in _context.products on cd.productid equals p.productid
+        //             where (cd.Cartid == orderid)
+        //             select new ShowDetailorder
+        //             {
+        //                 productid = p.productid,
+        //                 cartid = c.cartid,
+        //                 price = cd.price,
+        //                 productFaTitle = p.productFaTitle,
+        //                 Totalprice = c.TotalPrice,
+
+        //             }).ToList();
+        //    return b;
+        //}
+
     }
 }

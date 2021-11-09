@@ -1,0 +1,108 @@
+﻿
+
+@model ShowAddressForUserViewmodel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var informationuser = ViewBag.information as informationAccountViewmodel;
+}
+
+<!-- profile------------------------------->
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                        <partial name="_SidebarUser" model="informationuser" />
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        @if (TempData["Result"] != null)
+                        {
+                            if (TempData["Result"].ToString() == "true")
+                            {
+                                <div class="alert alert-success alert-dismissable">
+                                    <button type="button" class="close text-left" data-dismiss="alert" aria-hidden="true">×</button>
+                                    ثبت اطلاعات با موفقیت انجام شد .
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    خطادر انجام عملیات .
+                                </div>
+                            }
+                        }
+                        <div class="profile-content">
+
+                            @if (Model != null)
+                            {
+                                <div class="profile-stats">
+                                    <div class="profile-address">
+                                        <div class="box-header">
+                                            <span class="box-title">نشانی ما</span>
+                                        </div>
+                                        <div class="profile-address-item">
+                                            <div class="profile-address-item-top">
+                                                <div class="profile-address-item-title">غرنی ، حیدر آباد</div>
+                                                <div class="ui-more">
+                                                    <button class="btn-remove-address btn btn-danger" type="submit">حذف</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-address-content">
+                                                <ul class="profile-address-info">
+                                                    <li>
+                                                        <div class="profile-address-info-item location">
+                                                            <i class="mdi mdi-map-outline"></i>
+                                                            @Model.provincename، @Model.cityname
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="profile-address-info-item location">
+                                                            <i class="mdi mdi-email-outline"></i>
+                                                            @Model.phone
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="profile-address-info-item location">
+                                                            <i class="mdi mdi-phone"></i>
+                                                            @Model.Landlinephonenumber
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="profile-address-info-item location">
+                                                            <i class="mdi mdi-account"></i>
+                                                            @Model.FullAddress
+                                                        </div>
+                                                    </li>
+                                                    <li class="location-link">
+                                                        <a href="/user/profileuser/Updateaddress" class="edit-address-link">ویرایش آدرس</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning">
+                                    <div>
+                                        <div class="">
+                                            آدرسی موجود نمی باشد .
+                                            <a href="/user/profileuser/addaddres" class="pull-left btn btn-outline-info" style="position:relative;bottom:7px;">ایجاد ادرس</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- profile------------------------------->

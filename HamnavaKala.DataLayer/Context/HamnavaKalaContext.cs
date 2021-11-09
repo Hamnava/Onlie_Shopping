@@ -1,4 +1,5 @@
 ﻿using HamnavaKala.DataLayer.Entities;
+using HamnavaKala.DataLayer.Entities.Address;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,11 @@ namespace HamnavaKala.DataLayer.Context
         public DbSet<ProductPrice> ProductPrices { get; set; }
         #endregion
 
+        #region Address
+        public DbSet<city> cities { get; set; }
+        public DbSet<Province> provinces { get; set; }
+        public DbSet<useraddress> Useraddresses { get; set; }
+        #endregion
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var casecadeFKs = modelBuilder.Model.GetEntityTypes()

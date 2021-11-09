@@ -1,0 +1,120 @@
+﻿
+@model ShowAddressForUserViewmodel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var informationuser = ViewBag.information as informationAccountViewmodel;
+}
+
+
+<!-- profile------------------------------->
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+
+                        <partial name="_SidebarUser" model="informationuser" />
+
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        <div class="profile-content">
+                            <div class="profile-stats">
+                                <div class="profile-address">
+                                    <div class="middle-container">
+                                        <form asp-action="Updateaddress" method="post" class="form-checkout">
+                                            <input type="hidden" asp-for="addresid" />
+                                            <div class="form-checkout-row">
+                                                <label for="name">نام تحویل گیرنده <abbr class="required" title="ضروری" style="color:red;">*</abbr></span></label>
+                                                <input asp-for="Recipientname" class="input-name-checkout form-control">
+                                                <span asp-validation-for="Recipientname"></span>
+
+                                                <label for="phone-number">شماره موبایل <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input asp-for="phone" class="input-name-checkout form-control text-left">
+                                                <span asp-validation-for="phone"></span>
+
+                                                <label for="fixed-number">شماره تلفن ثابت <abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input asp-for="Landlinephonenumber" class="input-name-checkout form-control text-left">
+                                                <span asp-validation-for="Landlinephonenumber"></span>
+
+                                                <div class="form-checkout-valid-row">
+                                                    <label for="province">
+                                                        استان
+                                                        <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                                                    </label>
+                                                    <select id="province" asp-for="provinceid" class="form-control" asp-items="@(new SelectList(ViewBag.province,"provinceid","provincename"))">
+                                                        <option value="">استان مورد نظر خود را انتخاب کنید </option>
+
+                                                    </select>
+                                                    <span asp-validation-for="provinceid"></span>
+                                                    <label for="bld-num">
+                                                        پلاک
+                                                        <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                                                    </label>
+                                                    <input asp-for="Plaque" class="input-name-checkout js-input-bld-num form-control">
+                                                    <span asp-validation-for="Plaque"></span>
+                                                </div>
+
+                                                <div class="form-checkout-valid-row">
+                                                    <label for="city">
+                                                        شهر
+                                                        <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                                                    </label>
+                                                    <select asp-for="cityid" asp-items="@(new SelectList(ViewBag.City,"cityid","cityname"))" id="city" class="form-control">
+                                                        <option class="option" value="">شهر مورد نظر خود را انتخاب کنید</option>
+
+                                                    </select>
+                                                    <span asp-validation-for="cityid"></span>
+                                                    <label for="apt-id">واحد</label>
+                                                    <input type="text" asp-for="unit" class="input-name-checkout js-input-apt-id form-control">
+                                                </div>
+
+                                                <label for="post-code">کد پستی<abbr class="required" title="ضروری" style="color:red;">*</abbr></label>
+                                                <input type="text" asp-for="postalCode" class="input-name-checkout form-control" placeholder="کد پستی را بدون خط تیره بنویسید">
+                                                <span asp-validation-for="postalCode"></span>
+                                                <label for="address">
+                                                    آدرس
+                                                    <abbr class="required" title="ضروری" style="color:red;">*</abbr>
+                                                </label>
+                                                <textarea rows="5" cols="30" asp-for="FullAddress" class="textarea-name-checkout form-control"></textarea>
+                                                <span asp-validation-for="FullAddress"></span>
+                                                <div class="AR-CR">
+                                                    <button type="submit" class="btn-registrar"> ثبت آدرس</button>
+                                                    <a href="/User/ProfileUser/Address" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- profile------------------------------->
+@section SCript{
+
+    <script>
+        $("#province").change(function () {
+            var id = $(this).children("option:selected").val();
+            var cityselect = $("#city");
+            $.ajax({
+                type: "POST",
+                url: "/City",
+                data: { id: id },
+                success: function (data) {
+                    cityselect.children('.option').remove();
+                    cityselect.append("<option class='option' value='' selected='selected'>شهر مورد نظر خود را انتخاب کنید</option>");
+                    data.forEach(function (item) {
+                        cityselect.append($("<option class='option'></option>").val(item.cityid).html(item.cityname));
+                    });
+                }
+            })
+        });
+    </script>
+
+
+}

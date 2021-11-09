@@ -1,0 +1,93 @@
+﻿
+@model informationAccountViewmodel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- profile------------------------------->
+<div class="container-main">
+    <div class="d-block">
+        <section class="profile-home">
+            <div class="col-lg">
+                <div class="post-item-profile order-1 d-block">
+                    <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                        <partial name="_SidebarUser" model="@Model">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-xs-12 pl">
+                        <div class="profile-content">
+                            <div class="profile-stats">
+                                <table class="table table-profile">
+                                    <tbody>
+                                        <tr>
+                                            <td class="w-50">
+                                                <div class="title">نام و نام خانوادگی:</div>
+                                                <div class="value">@(Model.username +" "+Model.userfamily)</div>
+                                            </td>
+                                            <td>
+                                                <div class="title">پست الکترونیک :</div>
+                                                <div class="value">@Model.email</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="title">شماره تلفن همراه:</div>
+                                                <div class="value">@Model.phone</div>
+                                            </td>
+                                            <td>
+                                                <div class="title">تاریخ عضویت:</div>
+                                                <div class="value">@Model.DateTime.ConvertDate()</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="title"> دریافت خبرنامه :</div>
+                                                <div class="value">بله</div>
+                                            </td>
+                                            <td>
+                                                <div class="title"> کد ملی :</div>
+                                                <div class="value">-</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="profile">
+                                    <ul class="mb-0">
+                                        <li class="profile-item">
+                                            <div class="title">نام و نام خانوادگی:</div>
+                                            <div class="value">@(Model.username+" "+Model.userfamily)</div>
+                                        </li>
+                                        <li class="profile-item">
+                                            <div class="title">پست الکترونیک :</div>
+                                            <div class="value">@Model.email</div>
+                                        </li>
+                                        <li class="profile-item">
+                                            <div class="title">شماره تلفن همراه:</div>
+                                            <div class="value">@Model.phone</div>
+                                        </li>
+                                        <li class="profile-item">
+                                            <div class="title">تاریخ عضویت:</div>
+                                            <div class="value">@Model.DateTime.ConvertDate()</div>
+                                        </li>
+                                        <li class="profile-item">
+                                            <div class="title"> دریافت خبرنامه :</div>
+                                            <div class="value">بله</div>
+                                        </li>
+                                        <li class="profile-item">
+                                            <div class="title"> کد ملی :</div>
+                                            <div class="value">-</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="profile-edit-action">
+                                    <a href="/EditUser" class="link-spoiler-edit btn btn-secondary">ویرایش اطلاعات</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- profile------------------------------->

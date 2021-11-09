@@ -19,6 +19,108 @@ namespace HamnavaKala.DataLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.Province", b =>
+                {
+                    b.Property<int>("provinceid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("isDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("provincename")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("provinceid");
+
+                    b.ToTable("provinces");
+                });
+
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.city", b =>
+                {
+                    b.Property<int>("cityid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("cityname")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<bool>("isdelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("provinceid")
+                        .HasColumnType("int");
+
+                    b.HasKey("cityid");
+
+                    b.HasIndex("provinceid");
+
+                    b.ToTable("cities");
+                });
+
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.useraddress", b =>
+                {
+                    b.Property<int>("addresid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FullAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Isdelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Landlinephonenumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<int>("Plaque")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Recipientname")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<int>("cityid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<int>("postalCode")
+                        .HasColumnType("int");
+
+                    b.Property<int>("provinceid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("unit")
+                        .HasColumnType("int");
+
+                    b.Property<int>("userid")
+                        .HasColumnType("int");
+
+                    b.HasKey("addresid");
+
+                    b.HasIndex("cityid");
+
+                    b.HasIndex("provinceid");
+
+                    b.HasIndex("userid");
+
+                    b.ToTable("Useraddresses");
+                });
+
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.AnswerQ", b =>
                 {
                     b.Property<int>("AnswerId")
@@ -521,6 +623,44 @@ namespace HamnavaKala.DataLayer.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.city", b =>
+                {
+                    b.HasOne("HamnavaKala.DataLayer.Entities.Address.Province", "Province")
+                        .WithMany("cities")
+                        .HasForeignKey("provinceid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Province");
+                });
+
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.useraddress", b =>
+                {
+                    b.HasOne("HamnavaKala.DataLayer.Entities.Address.city", "city")
+                        .WithMany()
+                        .HasForeignKey("cityid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("HamnavaKala.DataLayer.Entities.Address.Province", "province")
+                        .WithMany()
+                        .HasForeignKey("provinceid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("HamnavaKala.DataLayer.Entities.User", "user")
+                        .WithMany()
+                        .HasForeignKey("userid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("city");
+
+                    b.Navigation("province");
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.AnswerQ", b =>
                 {
                     b.HasOne("HamnavaKala.DataLayer.Entities.Question", "Question")
@@ -691,6 +831,11 @@ namespace HamnavaKala.DataLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Address.Province", b =>
+                {
+                    b.Navigation("cities");
                 });
 
             modelBuilder.Entity("HamnavaKala.DataLayer.Entities.Brand", b =>

@@ -1,4 +1,5 @@
-﻿using HamnavaKala.DataLayer.Entities;
+﻿using HamnavaKala.Core.ViewModels;
+using HamnavaKala.DataLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace HamnavaKala.Core.Interfaces
         User FindUser(int id, string code);
         User FindUserByEmail(string email);
         User LoginUser(string email, string password);
+        informationAccountViewmodel informationAccount(int userid);
     }
 }

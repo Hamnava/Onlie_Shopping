@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HamnavaKala.Controllers
 {
-    [Authorize]
+ 
     public class HomeController : Controller
     {
         private readonly IProductServices _product;
