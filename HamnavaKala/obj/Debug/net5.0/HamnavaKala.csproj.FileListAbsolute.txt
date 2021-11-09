@@ -546,3 +546,11 @@ D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debu
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\AddGallery.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Areas\Admin\Views\Product\ShowGallery.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Product\Compare.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\Welcome.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.MvcApplicationPartsAssemblyInfo.cs

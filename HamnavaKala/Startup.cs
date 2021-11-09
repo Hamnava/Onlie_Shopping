@@ -41,6 +41,8 @@ namespace HamnavaKala
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IGurantee, GuranteeService>();
             services.AddTransient<IBrand, BrandService>();
+            services.AddTransient<IUserservice, Userservice>();
+
             #endregion
         }
 

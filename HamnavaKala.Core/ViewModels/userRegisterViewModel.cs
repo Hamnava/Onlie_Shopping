@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HamnavaKala.Core.ViewModels
+{
+   public class userRegisterViewModel
+    {
+        [Display(Name ="ایمیل")]
+        [Required(ErrorMessage ="وارد نمودن {0} الزامی میباشد.")]
+        public string Email { get; set; }
+        [Display(Name = "رمز عبور")]
+        [Required(ErrorMessage = "وارد نمودن {0} الزامی میباشد.")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        [Display(Name = "تایید رمز عبور")]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password), ErrorMessage ="رمز عبور با تکرار رمز عبور مطابقت ندارد.")]
+        public string ConfirmPassword { get; set; }
+        [Display(Name = "نام کاربری")]
+        [Required(ErrorMessage = "وارد نمودن {0} الزامی میباشد.")]
+        public string username { get; set; }
+        [Range(typeof(bool), "true", "true", ErrorMessage ="موافقت نمودن با قوانین سایت ما اجباری میباشد.")]
+        public bool IsAccept { get; set; }
+    }
+}
