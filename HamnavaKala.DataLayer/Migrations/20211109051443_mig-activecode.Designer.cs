@@ -4,14 +4,16 @@ using HamnavaKala.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HamnavaKala.DataLayer.Migrations
 {
     [DbContext(typeof(HamnavaKalaContext))]
-    partial class HamnavaKalaContextModelSnapshot : ModelSnapshot
+    [Migration("20211109051443_mig-activecode")]
+    partial class migactivecode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

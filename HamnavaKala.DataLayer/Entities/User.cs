@@ -20,7 +20,7 @@ namespace HamnavaKala.DataLayer.Entities
         public string Email { get; set; }
         public bool IsDelete { get; set; }
         public bool IsActive { get; set; }
-
+        public string ActiceCode { get; set; }
 
         #region Relations to other
         public List<Question> Questions { get; set; }

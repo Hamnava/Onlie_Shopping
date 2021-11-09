@@ -36,6 +36,11 @@ namespace HamnavaKala.Core.Servieces
             return _context.Users.Any(u => u.Email == email && u.UserId != id);
         }
 
+        public User FindUser(int id, string code)
+        {
+            return _context.Users.Where(u => u.UserId == id && u.ActiceCode == code).FirstOrDefault();
+        }
+
         public int RegisterUser(User user)
         {
             try

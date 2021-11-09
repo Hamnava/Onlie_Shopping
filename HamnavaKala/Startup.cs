@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static HamnavaKala.Core.Classes.RenderEmail;
 
 namespace HamnavaKala
 {
@@ -42,6 +43,7 @@ namespace HamnavaKala
             services.AddTransient<IGurantee, GuranteeService>();
             services.AddTransient<IBrand, BrandService>();
             services.AddTransient<IUserservice, Userservice>();
+            services.AddTransient<IViewRenderService, RenderViewToString>();
 
             #endregion
         }

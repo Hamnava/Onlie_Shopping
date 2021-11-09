@@ -7,15 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static HamnavaKala.Core.Classes.RenderEmail;
 
 namespace HamnavaKala.Controllers
 {
     public class AccountController : Controller
     {
         private readonly IUserservice _user;
-        public AccountController(IUserservice user)
+        private readonly IViewRenderService _renderEmail;
+        public AccountController(IUserservice user, IViewRenderService renderEmail)
         {
             _user = user;
+            _renderEmail = renderEmail;
         }
         public IActionResult Register()
         {
@@ -41,11 +44,14 @@ namespace HamnavaKala.Controllers
                 Password = user.Password.EncodePasswordMd5(),
                 userAccount = user.username,
                 IsActive = false,
-                IsDelete = false
+                IsDelete = false,
+                ActiceCode = GeneratCode.GuidCode()
             };
            var result = _user.RegisterUser(adduser);
             if (result > 0)
             {
+                var render = _renderEmail.RenderToStringAsync("_activate", adduser);
+                sendEmail.Send(user.Email, "فعال سازی حساب", render);
                 return View("Welcome",user.Email);
             }
             return View(user);
@@ -54,6 +60,21 @@ namespace HamnavaKala.Controllers
         public IActionResult Welcome()
         {
             return View();
+        }
+
+        [Route("Account/ActiveAccount/{userid}/{Code}")]
+        public IActionResult ActiveAccount(int userid, string Code)
+        {
+            var user = _user.FindUser(userid, Code);
+            if (user != null)
+            {
+                return NotFound();
+            }
+            user.IsActive = true;
+            user.ActiceCode = GeneratCode.GuidCode();
+            _user.Updateuser(user);
+            return RedirectToAction("Index", "Home");
+            
         }
     }
 }
