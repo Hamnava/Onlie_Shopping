@@ -41,4 +41,12 @@ namespace HamnavaKala.Core.ViewModels
         [Display(Name = "ایمیل")]
         public string Email { get; set; }
     }
+
+    public class LoginViewModel
+    {
+        public string email { get; set; }
+        public string password { get; set; }
+        public bool rememberMe { get; set; }
+    }
+
 }

@@ -18,7 +18,7 @@ namespace HamnavaKala
 {
     public class Startup
     {
-
+        public const string Schema = "HamnavaMarket";
         public IConfiguration Configuration { get; set; }
         public Startup(IConfiguration configuration)
         {
@@ -34,7 +34,15 @@ namespace HamnavaKala
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectoin"));
             });
 
+            // login part
+            services.AddAuthentication(Schema)
+               .AddCookie(Schema, option =>
+               {
+                   option.LoginPath = "/Account/Login";
+                   option.AccessDeniedPath = "/Account/Login";
+                   option.ExpireTimeSpan = TimeSpan.FromDays(30);
 
+               });
 
             #region IOC
             services.AddTransient<ISlider, SliderService>();
@@ -56,9 +64,14 @@ namespace HamnavaKala
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseDeveloperExceptionPage();
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseStatusCodePagesWithRedirects("/Home/Error");
+            app.UseAuthorization();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("Area", "{area:exists}/{controller=Home}/{action=Index}/{id?}");

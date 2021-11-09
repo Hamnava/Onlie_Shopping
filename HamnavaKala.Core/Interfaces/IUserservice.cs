@@ -15,5 +15,6 @@ namespace HamnavaKala.Core.Interfaces
         bool ExistEmail(string email, int id);
         User FindUser(int id, string code);
         User FindUserByEmail(string email);
+        User LoginUser(string email, string password);
     }
 }

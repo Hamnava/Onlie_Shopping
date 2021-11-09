@@ -2,10 +2,12 @@
 using HamnavaKala.Core.Interfaces;
 using HamnavaKala.Core.ViewModels;
 using HamnavaKala.DataLayer.Entities;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using static HamnavaKala.Core.Classes.RenderEmail;
 
@@ -139,5 +141,60 @@ namespace HamnavaKala.Controllers
             TempData["Result"] = update ? "true" : "false";
             return View("Recovery");
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            User user = _user.LoginUser(model.email, model.password.EncodePasswordMd5());
+
+            if (user != null)
+            {
+                if (user.IsActive)
+                {
+                    var claim = new List<Claim>
+                    {
+                        new Claim("userid",user.UserId.ToString()),
+                        new Claim("useraccount",user.userAccount),
+                        new Claim("useremail",user.Email),
+                    };
+                    var option = new AuthenticationProperties
+                    {
+                        IsPersistent = model.rememberMe,
+                    };
+                    HttpContext.SignInAsync(new ClaimsPrincipal(new ClaimsIdentity(claim, "Coockies")), option);
+                    return RedirectToAction("index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("Rememberme", "حساب کاربری شما فعال نمی باشد ");
+                    return View(model);
+                }
+            }
+            ModelState.AddModelError("Rememberme", "کاربری با این مشخصات یافت نشد.");
+            return View(model);
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction(nameof(Login));
+        }
+
+        [HttpGet]
+        [Route("checkauthorize")]
+        public IActionResult checkauthorize()
+        {
+            return Json(User.Identity.IsAuthenticated);
+        }
+
     }
 }

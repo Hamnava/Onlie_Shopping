@@ -46,6 +46,11 @@ namespace HamnavaKala.Core.Servieces
             return _context.Users.Where(u => u.Email == email).FirstOrDefault();
         }
 
+        public User LoginUser(string email, string password)
+        {
+            return _context.Users.Where(u => u.Password == password && u.Email == email).SingleOrDefault();
+        }
+
         public int RegisterUser(User user)
         {
             try

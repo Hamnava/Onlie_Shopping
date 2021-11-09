@@ -558,3 +558,5 @@ D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debu
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Shared\_recoveryPassword.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\RecoveryMessage.cshtml.g.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\Recovery.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
