@@ -14,5 +14,6 @@ namespace HamnavaKala.Core.Interfaces
         bool Deleteuser(User user);
         bool ExistEmail(string email, int id);
         User FindUser(int id, string code);
+        User FindUserByEmail(string email);
     }
 }

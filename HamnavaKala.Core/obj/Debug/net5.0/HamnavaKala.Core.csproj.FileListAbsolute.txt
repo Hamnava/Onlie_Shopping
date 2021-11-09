@@ -51,4 +51,3 @@ D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\ref\HamnavaKala.Core.dll
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.pdb
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.genruntimeconfig.cache
-D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala.Core\obj\Debug\net5.0\HamnavaKala.Core.csproj.CopyComplete

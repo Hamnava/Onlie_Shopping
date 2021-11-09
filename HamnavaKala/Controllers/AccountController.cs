@@ -76,5 +76,68 @@ namespace HamnavaKala.Controllers
             return RedirectToAction("Index", "Home");
             
         }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ForgotPassword(forgotpasswordViewModel model)
+        {
+            var user = _user.FindUserByEmail(model.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("Email", "کاربری با این مشخصات پیدا نشد");
+                return View(model);
+            }
+           
+
+            var render = _renderEmail.RenderToStringAsync("_recoveryPassword", user);
+            sendEmail.Send(user.Email, "باز یابی رمز عبور", render);
+            return View("RecoveryMessage", user.Email);
+        }
+
+        public IActionResult RecoveryMessage()
+        {
+            return View();
+        }
+
+        [Route("Account/Recovery/{userid}/{Code}")]
+        public IActionResult Recovery(int userid, string Code)
+        {
+            User user = _user.FindUser(userid, Code);
+            forgotpasswordViewModel viewModel = new forgotpasswordViewModel
+            {
+                userid = user.UserId,
+                Email = user.Email
+            };
+            if (user != null)
+            {
+                return View("Recovery", viewModel);
+            }
+            return View("Index", "Home");
+        }
+
+        [HttpPost]
+        [Route("Account/Recovery/{userid}/{Code}")]
+        public IActionResult Recovery(forgotpasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Recovery", model);
+            }
+
+            User user = _user.FindUserByEmail(model.Email);
+            if (user != null)
+            {
+                user.ActiceCode = GeneratCode.GuidCode();
+                user.Password = model.Password.EncodePasswordMd5();
+            }
+
+            bool update = _user.Updateuser(user);
+            TempData["Result"] = update ? "true" : "false";
+            return View("Recovery");
+        }
     }
 }

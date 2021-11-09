@@ -26,4 +26,19 @@ namespace HamnavaKala.Core.ViewModels
         [Range(typeof(bool), "true", "true", ErrorMessage ="موافقت نمودن با قوانین سایت ما اجباری میباشد.")]
         public bool IsAccept { get; set; }
     }
+
+    public class forgotpasswordViewModel
+    {
+        public int userid { get; set; }
+        [Display(Name = "رمز عبور")]
+        [Required(ErrorMessage = "وارد نمودن {0} الزامی میباشد.")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        [Display(Name = "تایید رمز عبور")]
+        [DataType(DataType.Password)]
+        [Compare(nameof(Password), ErrorMessage = "رمز عبور با تکرار رمز عبور مطابقت ندارد.")]
+        public string confirmpassword { get; set; }
+        [Display(Name = "ایمیل")]
+        public string Email { get; set; }
+    }
 }

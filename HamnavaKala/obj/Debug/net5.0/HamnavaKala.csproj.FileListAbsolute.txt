@@ -555,3 +555,6 @@ D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debu
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\HamnavaKala.MvcApplicationPartsAssemblyInfo.cs
 D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Shared\_activate.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Shared\_recoveryPassword.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\RecoveryMessage.cshtml.g.cs
+D:\My Lessons\AspNet Core\Git and GitHub\Git\Onlie_Shopping\HamnavaKala\obj\Debug\net5.0\Razor\Views\Account\ForgotPassword.cshtml.g.cs
