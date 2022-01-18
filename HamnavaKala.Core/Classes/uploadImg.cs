@@ -15,7 +15,7 @@ namespace HamnavaKala.Core.Classes
             try
             {
                 string imgname = GeneratCode.GuidCode() + Path.GetExtension(file.FileName);
-                string ImgPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Site/assets/images/" + folder , imgname);
+                string ImgPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/" + folder , imgname);
 
                 using (var stream = new FileStream(ImgPath, FileMode.Create))
                 {
@@ -35,7 +35,7 @@ namespace HamnavaKala.Core.Classes
         {
             try
             {
-                string Fullpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Site/assets/images/" + path + "/" + imgname);
+                string Fullpath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/" + path + "/" + imgname);
                 if (File.Exists(Fullpath))
                 {
                     File.Delete(Fullpath);

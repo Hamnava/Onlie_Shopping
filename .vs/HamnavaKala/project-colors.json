@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3261d613-73b1-45c7-a690-b52157f26fc4": {
+      "ProjectGuid": "3261d613-73b1-45c7-a690-b52157f26fc4",
+      "DisplayName": "HamnavaKala.Core",
+      "ColorIndex": 0
+    },
+    "c1e935d6-617f-415b-8fab-6c8248d9ac7e": {
+      "ProjectGuid": "c1e935d6-617f-415b-8fab-6c8248d9ac7e",
+      "DisplayName": "HamnavaKala",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
